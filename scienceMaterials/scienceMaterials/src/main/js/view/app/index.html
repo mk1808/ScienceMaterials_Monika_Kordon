@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="materialsApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,8 @@
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
- 
+  <link rel="icon" type="image/png" ng-href="/favicon.png"/>
+  <link rel="icon" type="image/png" ng-href="https://example.com/favicon.png"/>
 </head>
 <body>
   <ul class="menu">
@@ -25,7 +26,7 @@
       <button class="button is-primary">Primary</button>
       <button class="button is-link">Link</button>
     </div>
-    
+    {{3+8}}
     <div class="buttons">
       <button class="button is-info">Info</button>
       <button class="button is-success">Success</button>
@@ -41,13 +42,16 @@
   <div ng-view></div>
 
   <div>AngularJS seed app: av<span app-version></span></div>
-
+  test<my-awesome-directive></my-awesome-directive>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
+
+  <script src="src/components/main/mainPageDirective.js"></script>
+  
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="core/version/version.js"></script>

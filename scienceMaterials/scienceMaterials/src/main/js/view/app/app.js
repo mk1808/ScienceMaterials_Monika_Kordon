@@ -1,14 +1,18 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+angular.module('materialsApp', [
+  'ngRoute'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+ // $locationProvider.hashPrefix('!');
+  $routeProvider.
+        when('/home', {
+          template: 'test<my-awesome-directive></my-awesome-directive>'
+        }).
+       
+        otherwise('/home');
+   
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+
 }]);
