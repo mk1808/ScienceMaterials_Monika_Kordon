@@ -8,10 +8,12 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
  // $locationProvider.hashPrefix('!');
   $routeProvider.
         when('/home', {
-          template: 'test<my-awesome-directive></my-awesome-directive>'
-        }).
-       
-        otherwise('/home');
+          template: '<main-page-directive></main-page-directive>'///'<my-awesome-directive></my-awesome-directive>'
+        })
+        .when('/article',{
+          template: '<single-article-directive></single-article-directive>'
+        })
+        .otherwise('/home');
    
 
 
