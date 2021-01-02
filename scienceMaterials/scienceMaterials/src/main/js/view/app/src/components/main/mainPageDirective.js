@@ -1,8 +1,15 @@
 'use strict';
 
 angular
-    .module('materialsApp').
-
+    .module('materialsApp')
+    .directive('mainPageDirective', function () {
+        return {
+            restrict: 'E',
+            templateUrl: '/src/components/main/mainPage.html',
+            link: function ($scope, element, attrs) {
+            }
+        };
+    });
     /*
     .directive('mainPageDirective',function(){
     return {
@@ -19,9 +26,4 @@ angular
     }
         );*/
 
-        directive('myAwesomeDirective', function() {
-            return {
-              restrict: 'E',
-              template: '<h1>This is awesome!</h1>'
-            };
-        });
+ 
