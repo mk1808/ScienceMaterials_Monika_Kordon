@@ -1,0 +1,110 @@
+/* app css stylesheet */
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em; }
+
+.menu:before {
+  content: "["; }
+
+.menu:after {
+  content: "]"; }
+
+.menu > li {
+  display: inline; }
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em; }
+
+.mainPagePart {
+  min-height: 800px; }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 33% 33% 33%; }
+
+.cardFromGrid .card {
+  margin-left: 20px;
+  margin-right: 20px; }
+
+.singleArticle .card .card-image img {
+  height: 200px; }
+
+.singleArticle .card .card-content h1 {
+  text-align: center;
+  font-size: 81px;
+  /* margin-top: -20px; */
+  padding-top: 0px; }
+
+.singleArticle .card .card-content .category {
+  border: 2px dotted black;
+  background-color: #86c1c1;
+  text-align: center;
+  max-width: 200px;
+  border-radius: 16px;
+  margin: 0 auto;
+  margin-top: 20px; }
+
+.singleArticle .card .card-content .categories {
+  text-align: center; }
+
+.singleArticle .card .card-content .media {
+  text-align: end;
+  margin-top: 40px; }
+
+.singleArticle .card .articleContent {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-left: 300px;
+  margin-right: 300px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.45);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: auto; }
+  .singleArticle .card .articleContent .articleText {
+    font-size: 24px; }
+  .singleArticle .card .articleContent .articleHeader {
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  .singleArticle .card .articleContent .articlePicture {
+    text-align: center;
+    font-weight: 600; }
+    .singleArticle .card .articleContent .articlePicture img {
+      margin-top: 20px;
+      margin-bottom: 10px; }
+  .singleArticle .card .articleContent .articleLink {
+    min-height: 175px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    .singleArticle .card .articleContent .articleLink .border {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      height: 100px;
+      padding: 20px; }
+      .singleArticle .card .articleContent .articleLink .border div {
+        font-size: 26px;
+        font-weight: 700;
+        /* text-decoration: underline;*/ }
+    .singleArticle .card .articleContent .articleLink .topStrip {
+      min-height: 37px;
+      background-color: #b6bbbb;
+      padding: 20px;
+      text-align: left; }
+    .singleArticle .card .articleContent .articleLink .author {
+      text-align: end; }
+  .singleArticle .card .articleContent .points ul {
+    list-style: inside;
+    margin-left: 32px;
+    margin-top: 20px;
+    margin-bottom: 25px; }
+  .singleArticle .card .articleContent .media .title {
+    margin-bottom: 8px; }
