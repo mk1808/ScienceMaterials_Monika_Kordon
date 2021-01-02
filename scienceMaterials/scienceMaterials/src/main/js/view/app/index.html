@@ -11,7 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
+  <!-- 
+      <link rel="stylesheet" href="app.css">
+  -->
+  <link rel="stylesheet" href="css/styles.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -19,7 +22,7 @@
   <link rel="icon" type="image/png" ng-href="https://example.com/favicon.png"/>
 </head>
 <body>
-  <ul class="menu">
+ <!-- <ul class="menu">
     <li><a href="#!/view1">view1</a></li>
     <li><a href="#!/view2">view2</a></li>
     <div class="buttons">
@@ -33,24 +36,29 @@
       <button class="button is-warning">Warning</button>
       <button class="button is-danger">Danger</button>
     </div>
-  </ul>
+  </ul>-->
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  
+<header-directive></header-directive>
+  <div class = "mainPagePart" ng-view></div>
+<footer-directive></footer-directive>
+<!--  <div>AngularJS seed app: av<span app-version></span></div>
+-->
 
-  <div ng-view></div>
-
-  <div>AngularJS seed app: av<span app-version></span></div>
-  test<my-awesome-directive></my-awesome-directive>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-
+<script src="src/layout/footerDirective.js"></script>
+<script src="src/layout/headerDirective.js"></script>
+<script src="src/components/common/card/cardDirective.js"></script>
   <script src="src/components/main/mainPageDirective.js"></script>
+  <script src="src/components/singleArticle/singleArticleDirective.js"></script>
   
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
