@@ -1,0 +1,155 @@
+single article
+
+<div class=singleArticle>
+  <div class="card">
+    <div class="card-image">
+      <figure class="image">
+        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div>
+        <h1>Article Title</h1>
+      </div>
+      <div class="categories">
+        <div class="category">
+          <span>Technologia</span>
+        </div>
+      </div>
+      <div class="articleContent">
+        <span class="articleText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in vestibulum ante, quis pharetra dui. Integer
+          elit sapien, rhoncus ac tincidunt vel, consectetur et dolor. Quisque nec mauris sapien. Vestibulum non auctor
+          metus, eget eleifend neque. Proin a elit a eros rhoncus scelerisque. Donec aliquet ipsum sit amet pulvinar
+          lacinia. Proin imperdiet enim nec enim facilisis, tempor accumsan ante euismod. Duis et quam vulputate, luctus
+          nisl at, varius felis.
+
+          Ut et fringilla dolor. Donec elementum lectus quis lectus posuere euismod in quis quam. Integer ornare nulla
+          sit amet placerat auctor. In luctus nunc in ligula porta suscipit. Cras a risus ipsum. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tempor rutrum mi ut ullamcorper.
+          Mauris eu dui ornare, interdum leo at, commodo massa. Fusce ac ipsum id turpis ullamcorper consequat mollis
+          eget libero. Nunc euismod dictum ligula, sit amet rutrum elit aliquet non. Pellentesque tristique pharetra
+          finibus. Phasellus sed feugiat nibh, at ultricies diam. Nunc tincidunt feugiat risus. Sed malesuada blandit
+          porta.
+
+          Integer auctor arcu nisi, quis porttitor nisi imperdiet et. Proin vulputate, nisi ac dignissim iaculis, urna
+          neque vulputate tellus, sed ultrices lacus odio vel libero. Pellentesque volutpat consectetur tellus, a
+          scelerisque ex pretium nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+          curae; Nunc turpis erat, porttitor non diam eget, tempus faucibus justo. Phasellus porttitor tellus non
+          lacinia venenatis. Vestibulum aliquet sem at lacus gravida semper. Sed suscipit nisi a elementum maximus. Sed
+          porta scelerisque consequat. Suspendisse pharetra justo libero, pellentesque dignissim elit auctor sed.
+          Quisque imperdiet luctus mollis. Aenean aliquam fringilla accumsan. Praesent viverra nisi ut mauris congue,
+          vitae dictum nisi suscipit.
+
+          Phasellus tristique ante elit. Aliquam pulvinar, neque at tincidunt mollis, massa sapien aliquam lectus, in
+          aliquet sapien metus non ipsum. Pellentesque non dolor sit amet ligula sagittis consequat a ac nunc. Nam id
+          lobortis nulla, eget placerat lorem. Duis eu massa in orci condimentum posuere. Quisque arcu mauris, cursus
+          eget justo sed, ornare porttitor diam. Praesent auctor mi id libero dictum condimentum.
+
+          Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse nibh orci, vestibulum ac tellus
+          eget, commodo lobortis justo. Nam erat eros, accumsan at justo vitae, posuere pretium metus. Nullam dui
+          lectus, porttitor eu dui at, scelerisque dapibus dolor. Duis condimentum cursus risus, et sollicitudin urna
+          suscipit sit amet. Vestibulum lobortis dignissim massa, quis euismod nisl. Curabitur elementum dolor in orci
+          vestibulum, at lacinia nibh commodo. Sed pellentesque nisl orci. Duis eget consequat urna. Proin quis dolor
+          aliquet, hendrerit erat id, lacinia ipsum. Nam purus ipsum, egestas eu neque feugiat, cursus scelerisque est.
+          Aenean imperdiet, quam sit amet egestas iaculis, tellus neque viverra nibh, eu scelerisque libero felis ac
+          quam.
+
+        </span>
+        <div class=" articleText points">
+          <ul>
+            <li ng-repeat="point in points"> {{point}}</li>
+          </ul>
+        </div>
+
+        <div class="articleHeader">
+          <div class="content" ng-switch="headerSize">
+
+            <div ng-switch-when="1">
+              <h2>Tytuł artykułu</h2>
+            </div>
+            <div ng-switch-when="2">
+              <h3>Tytuł artykułu</h3>
+            </div>
+            <div ng-switch-when="3">
+              <h4>Tytuł artykułu</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="articlePicture content">
+          <img src="https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg" width="600px">
+          <div><span>{{pictureProperties.type}} {{pictureProperties.no}}. {{pictureProperties.name}}</span></div>
+        </div>
+
+        <div class="articleLink content">
+          <div class="topStrip">
+            <div>
+              Link 1. Praesent viverra nisi ut mauris congue, vitae dictum nisi suscipit. Phasellus tristique ante elit.
+              Aliquam pulvinar, neque at tincidunt mollis, massa sapien aliquam lectus, in aliquet sapien metus non
+              ipsum. Pellentesque non dolor sit amet ligula sagittis consequat a ac
+            </div>
+          </div>
+          <div class="border">
+
+            <div>
+              <a href="www.example.pl"> Link do strony ABC</a>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="articleLink content">
+          <div class="topStrip">
+            <div>
+              Plik 1. Praesent viverra nisi ut mauris congue, vitae dictum nisi suscipit. Phasellus tristique ante elit.
+              Aliquam pulvinar, neque at tincidunt mollis, massa sapien aliquam lectus, in aliquet sapien metus non
+              ipsum. Pellentesque non dolor sit amet ligula sagittis consequat a ac
+            </div>
+          </div>
+          <div class="border">
+
+            <div>
+              <a href="www.example.pl"> Plik z zadaniami.docx</a>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="media">
+
+          <div class="media-content">
+            <p class="title is-4">John Smith</p>
+
+            <time datetime="2016-1-1">1 Jan 2016</time>
+          </div>
+        </div>
+
+
+      </div>
+      <!--
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+          </figure>
+        </div>
+
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+        <a href="#">#css</a> <a href="#">#responsive</a>
+        <br>
+        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </div>-->
+    </div>
+  </div>
+</div>
