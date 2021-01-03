@@ -10,12 +10,21 @@ angular
                 $scope.header= {size:"1", text:"Nagłówek 1"}
                 $scope.header1= {size:"2", text:"Nagłówek 2"}
                 $scope.header2= {size:"3", text:"Nagłówek 3"}
-                $scope.pictureProperties = {
+                $scope.picture = {
                     name:"Na obrazie przedsatwiono krajobraz",
                     type:"Rys.",
-                    no:1
+                    no:1,
+                    source:"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg"
                 }
                 $scope.points = ["Lorem ipsum 1;", "Lorem ipsum 2;", "Lorem ipsum 3;"] 
+                $scope.link = {
+                    source:"https://gmail.com", 
+                    text:"Link do strony ABC", 
+                    description:`Praesent viverra nisi ut mauris congue, vitae dictum nisi suscipit. Phasellus tristique ante elit.
+                    Aliquam pulvinar, neque at tincidunt mollis, massa sapien aliquam lectus, in aliquet sapien metus non
+                    ipsum. Pellentesque non dolor sit amet ligula sagittis consequat a ac`, 
+                    no:1};
+
                 $scope.text=`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in vestibulum ante, quis pharetra dui. Integer
                 elit sapien, rhoncus ac tincidunt vel, consectetur et dolor. Quisque nec mauris sapien. Vestibulum non auctor
                 metus, eget eleifend neque. Proin a elit a eros rhoncus scelerisque. Donec aliquet ipsum sit amet pulvinar
@@ -51,8 +60,16 @@ angular
                 vestibulum, at lacinia nibh commodo. Sed pellentesque nisl orci. Duis eget consequat urna. Proin quis dolor
                 aliquet, hendrerit erat id, lacinia ipsum. Nam purus ipsum, egestas eu neque feugiat, cursus scelerisque est.
                 Aenean imperdiet, quam sit amet egestas iaculis, tellus neque viverra nibh, eu scelerisque libero felis ac
-                quam.`
-              
+                quam.`;
+                $scope.file={
+                    source:"https://gmail.com", 
+                    name:"materialy", 
+                    extension:"pdf",
+                    description:`Praesent viverra nisi ut mauris congue, vitae dictum nisi suscipit. Phasellus tristique ante elit.
+                    Aliquam pulvinar, neque at tincidunt mollis, massa sapien aliquam lectus, in aliquet sapien metus non
+                    ipsum. Pellentesque non dolor sit amet ligula sagittis consequat a ac`, 
+                    no:1};
+                
             }
         };
     });
