@@ -7,6 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/main/mainPage.html',
             link: function ($scope, element, attrs) {
+                
             }
         };
     });

@@ -10,8 +10,10 @@
     "angular-loader": "^1.7.5",
     "angular-route": "^1.7.5",
     "angularjs-dragula": "^2.0.0",
+    "browserify": "^17.0.0",
     "bulma-start": "0.0.4",
     "gulp": "^4.0.2",
+    "gulp-run-command": "0.0.10",
     "html5-boilerplate": "0.0.1",
     "node-sass": "^5.0.0"
   },

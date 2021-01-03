@@ -1,8 +1,10 @@
 'use strict';
-
+  
+var angularDragula = require('angularjs-dragula')
+;
 // Declare app level module which depends on views, and core components
 angular.module('materialsApp', [
-  'ngRoute'
+  'ngRoute', angularDragula(angular)
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
  // $locationProvider.hashPrefix('!');
