@@ -18,6 +18,12 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         .when('/article/new',{
           template: '<add-article-directive></add-article-directive>'
         })
+        .when('/register',{
+          template: '<register-directive></register-directive>'
+        })
+        .when('/login',{
+          template: '<login-directive></login-directive>'
+        })
         .otherwise('/home');
    
 

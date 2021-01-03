@@ -189,7 +189,7 @@
 
         .fileInput{
             width:400px;
-        }        
+        }         
         input { 
            
             width:320px;
@@ -198,6 +198,18 @@
             width: 320px;
         }
     
+    }
+    
+}
+
+.register{
+    .header{
+        margin-bottom:30px;
+    }
+    .buttons{
+        display: grid;
+        grid-template-columns: 120px 85px 120px;
+        justify-content: space-evenly!important;
     }
     
 }

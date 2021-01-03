@@ -7,9 +7,16 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/basicFormElements/input/input.html',
             scope:{
-                file: '=',
+                displayName: '@',
+                controlName: '=',
+                type: '@?'
             },
             link: function ($scope, element, attrs) {
+                if(!$scope.type) {
+                    $scope.type="text";
+                }
+               console.log(attrs)
+               debugger;
             }
         };
     });
