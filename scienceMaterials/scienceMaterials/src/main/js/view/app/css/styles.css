@@ -110,3 +110,33 @@
     margin-bottom: 25px; }
   .singleArticle .card .articleContent .media .title {
     margin-bottom: 8px; }
+
+.addArticle {
+  text-align: center;
+  margin-top: 50px; }
+  .addArticle .formContent {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    height: 1000px;
+    padding: 50px 200px; }
+    .addArticle .formContent .singleInput {
+      width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px; }
+      .addArticle .formContent .singleInput label {
+        text-align: left; }
+      .addArticle .formContent .singleInput textarea {
+        width: auto; }
+      .addArticle .formContent .singleInput .file {
+        justify-content: center; }
+    .addArticle .formContent .areaInput {
+      width: auto !important; }
+    .addArticle .formContent .fileInput {
+      width: 400px; }
+    .addArticle .formContent input {
+      width: 320px; }
+    .addArticle .formContent select {
+      width: 320px; }

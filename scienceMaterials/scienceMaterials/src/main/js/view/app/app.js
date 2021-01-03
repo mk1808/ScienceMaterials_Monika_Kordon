@@ -15,6 +15,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         .when('/article',{
           template: '<single-article-directive></single-article-directive>'
         })
+        .when('/article/new',{
+          template: '<add-article-directive></add-article-directive>'
+        })
         .otherwise('/home');
    
 

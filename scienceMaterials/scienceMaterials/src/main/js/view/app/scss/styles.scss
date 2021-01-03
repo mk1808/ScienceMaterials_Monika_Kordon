@@ -157,3 +157,47 @@
 
     }
 }
+
+.addArticle{
+    text-align: center;
+    margin-top:50px;
+    .formContent{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        height: 1000px;
+        padding: 50px 200px;
+        .singleInput {
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            & label{
+                text-align: left;
+            }
+            textarea{
+                width: auto;
+            }
+            .file{
+                justify-content: center;
+            }
+        }
+        .areaInput{
+            width:auto!important;
+        }
+
+        .fileInput{
+            width:400px;
+        }        
+        input { 
+           
+            width:320px;
+        }
+        select {
+            width: 320px;
+        }
+    
+    }
+    
+}
