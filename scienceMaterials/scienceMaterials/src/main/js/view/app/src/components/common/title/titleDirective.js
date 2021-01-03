@@ -2,10 +2,10 @@
 
 angular
     .module('materialsApp')
-    .directive('cardDirective', function () {
+    .directive('titleDirective', function () {
         return {
             restrict: 'E',
-            templateUrl: '/src/components/common/card/card.html',
+            templateUrl: '/src/components/common/title/title.html',
             link: function ($scope, element, attrs) {
             }
         };
