@@ -10,5 +10,8 @@
             <div></div>
             <button class="button is-primary" ng-click="submit()">Zapisz</button>
         </div>
+        <div class="result" ng-if="loginStatus===false">
+            <h2>Logowanie nie powiodło się, spróbuj ponownie.</h2>
+        </div>
     </div>
 </div>

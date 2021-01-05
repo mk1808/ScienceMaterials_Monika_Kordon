@@ -16,7 +16,7 @@ angular
                     $scope.type="text";
                 }
                console.log(attrs)
-               debugger;
+        //       debugger;
             }
         };
     });
