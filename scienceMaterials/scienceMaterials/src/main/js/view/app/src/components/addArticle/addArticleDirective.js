@@ -2,11 +2,19 @@
 
 angular
     .module('materialsApp')
-    .directive('addArticleDirective', function () {
+    .directive('addArticleDirective',['ArticleRestService', function (articleRestService) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/addArticle/addArticle.html',
             link: function ($scope, element, attrs) {
+                debugger;
+                $scope.success=function(){
+                    console.log("success")
+                }
+                $scope.error=function(){
+                    console.log("error")
+                }
+                articleRestService.getArticles(1, $scope.success, $scope.error);
                 $scope.header= {size:"1", text:"Nagłówek 1"}
                 $scope.header1= {size:"2", text:"Nagłówek 2"}
                 $scope.header2= {size:"3", text:"Nagłówek 3"}
@@ -72,4 +80,4 @@ angular
                 
             }
         };
-    });
+    }]);
