@@ -74,7 +74,18 @@ public class ArticleController {
 		return new ResponseEntity<>(articleService.getArticlesByCategories(categories), HttpStatus.OK);
 	}
 	
+	@GetMapping("title")
+	public ResponseEntity<Set<Article>> getArticlesByTitle(@RequestParam (value ="title")String title) {
+		
+		return new ResponseEntity<>(articleService.getArticlesByTitlePart(title), HttpStatus.OK);
+	}
 	
 	
+	@GetMapping("titleCategory")
+	public ResponseEntity<Set<Article>> getArticlesByTitleAndCategory(@RequestParam (value ="title")String title,
+			@RequestParam (value ="categories")Set<ArticleCategory> categories) {
+		
+		return new ResponseEntity<>(articleService.getArticlesByTitlePartAndCategory(title, categories), HttpStatus.OK);
+	}
 	
 }

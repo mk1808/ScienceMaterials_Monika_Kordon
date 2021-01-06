@@ -2,6 +2,7 @@ package com.share.scienceMaterials.services;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -130,5 +131,48 @@ private UserService userService;
 		return articles;
 	}
 	
+	public Set<Article> getArticlesByTitlePart(String title){
+		title = title.toLowerCase();
+		Set<Article> articles = articleRepository.getArticlesByTitlePart(title);
+		for(Article article:articles) {
+			if(article.getUser()!=null) {
+			article.setUsersId(article.getUser().getId());
+			
+		}
+		}
+		return articles;
+	}
+		
+	public Set<Article> getArticlesByTitlePartAndCategory(String title, Set<ArticleCategory> categories) {
+
+		Set<Article> articlesCategory = new HashSet<>();
+		Set<Article> articlesTitle = new HashSet<>();
+
+		if (title != null) {
+			articlesTitle = getArticlesByTitlePart(title);
+		}
+		if (categories != null && categories.size() > 0) {
+			articlesCategory = getArticlesByCategories(categories);
+		}
+		if(articlesCategory.size()<1) {
+			return articlesTitle;
+		}
+		if(articlesTitle.size()<1) {
+			return articlesCategory;
+		}
+		articlesCategory.retainAll(articlesTitle);
+
+		return articlesCategory;
+	}
+	
+/*	public Set<Article> getArticlesByTitlePartAndCategory2(String title, Set<ArticleCategory> categories) {
+
+		Set<Article> articles = articleRepository.getArticlesByTitlePartAndCategories(title, new ArrayList<>(categories));
+
+		return articles;
+	}
+*/
 }
+	
+
 
