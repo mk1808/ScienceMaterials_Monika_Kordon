@@ -244,3 +244,12 @@
     }
 }
 
+
+.searchBar{
+    display: grid;
+    grid-template-columns: 30% 20% 20% 30%;
+    grid-column-gap: 50px;
+    .button{
+        margin-top:32px;
+    }
+}

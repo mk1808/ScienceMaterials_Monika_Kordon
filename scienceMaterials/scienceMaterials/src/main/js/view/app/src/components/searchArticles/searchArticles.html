@@ -1,1 +1,19 @@
-SEARCH
+<div>
+    <div class="searchBar">
+        <div></div>
+        <div>
+            <input-directive display-name="Tytuł" control-name="searchForm.title"></input-directive>
+            
+        </div>
+        <div>
+            <select-option-directive display-name="Kategoria" control-name="searchForm.category" options="options"></select-option-directive>
+        </div>
+        <div>   
+            <button class="button is-primary" ng-click="search()">Szukaj</button></div>
+    </div>
+    <div class="gridContainer">
+        <div ng-if="initialized && articles.length>0" ng-repeat="article in articles">
+            <card-directive card-content="article"></card-directive>
+        </div>
+    </div>
+</div>
