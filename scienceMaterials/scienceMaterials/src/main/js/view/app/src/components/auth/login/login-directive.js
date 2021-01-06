@@ -24,6 +24,7 @@ angular
                 }
                 $scope.successLogin = function(response){
                     debugger;
+                    localStorage.setItem('userId', response.data.id);
                     console.log($location.absUrl())
                     $location.path("user");
                     scope.registerStatus = true;
