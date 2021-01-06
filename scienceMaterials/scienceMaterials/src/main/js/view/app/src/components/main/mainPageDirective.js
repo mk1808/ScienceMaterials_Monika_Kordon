@@ -11,7 +11,7 @@ angular
                 $scope.articles;
                 $scope.initialized = false;;
                 $scope.init = function(){
-                    debugger;
+               //     debugger;
                     articleRestService.getArticles(scope.success, scope.error)
                 }
                 $scope.success = function(response){

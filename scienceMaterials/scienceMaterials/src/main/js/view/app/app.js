@@ -27,8 +27,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         .when('/user',{
           template: '<users-articles-directive></users-articles-directive>'
         })
-        .otherwise('/home');
-   
+        .when('/search',{
+          template: '<search-articles-directive></search-articles-directive>'
+        })
+//        .otherwise('/home');
+  ; 
 
 
 }]);
