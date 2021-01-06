@@ -35,8 +35,11 @@
 }
 
 .cardFromGrid .card {
-    margin-left: 20px;
-    margin-right: 20px;
+  margin:40px 20px ;
+
+  .card-content {
+  min-height: 195px;
+  }
 }
 
 .singleArticle .card {
@@ -45,6 +48,7 @@
     }
 
     .card-content {
+      
         h1 {
             text-align: center;
             font-size: 81px;
@@ -174,7 +178,7 @@
             margin-right: auto;
             margin-bottom: 20px;
             & label{
-                text-align: left;
+                text-align: left; 
             }
             textarea{
                 width: auto;
@@ -197,8 +201,18 @@
         select {
             width: 320px;
         }
+        
     
     }
+    .tableContent{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        min-height: 1000px;
+        padding: 50px 180px!important;
+    }
+
     
 }
 
@@ -206,6 +220,7 @@
     .header{
         margin-bottom:30px;
     }
+
     .buttons{
         display: grid;
         grid-template-columns: 120px 85px 120px;
@@ -220,3 +235,12 @@
     }
     
 }
+.userArticles{
+    .header{
+        margin-bottom:30px;
+        &.marginTop{
+            margin-top: 30px;
+        }
+    }
+}
+

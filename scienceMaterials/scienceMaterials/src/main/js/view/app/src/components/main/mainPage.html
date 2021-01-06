@@ -1,10 +1,10 @@
 <div>
 <h1>mainPage</h1>
 <div class = "gridContainer">
-
-    <card-directive></card-directive>
-    <card-directive></card-directive>
-    <card-directive></card-directive>
+<div  ng-if="initialized && articles.length>0" ng-repeat="article in articles">
+    <card-directive card-content="article"></card-directive>
+   
+</div>
 </div>
 
 </div>

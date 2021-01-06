@@ -6,7 +6,12 @@ angular
         return {
             restrict: 'E',
             templateUrl: '/src/components/common/card/card.html',
+            scope:{
+                cardContent: '=',
+            },
             link: function ($scope, element, attrs) {
+                var scope = $scope;
+                console.log(scope.cardContent)
             }
         };
     });
