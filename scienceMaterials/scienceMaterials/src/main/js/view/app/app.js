@@ -24,6 +24,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         .when('/login',{
           template: '<login-directive></login-directive>'
         })
+        .when('/user',{
+          template: '<users-articles-directive></users-articles-directive>'
+        })
         .otherwise('/home');
    
 

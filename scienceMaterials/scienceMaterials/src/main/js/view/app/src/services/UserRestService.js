@@ -18,4 +18,11 @@ angular
                 headers: { 'Content-Type': 'application/json' }
             }).then(successCallback, errorCallback);
         }
+        this.getArticlesforUser = function(id, successCallback, errorCallback){
+            console.log("service")
+            $http({
+                method: 'GET',
+                url: 'api/articles/user/'+id
+              }).then(successCallback, errorCallback);
+        }
     }])
