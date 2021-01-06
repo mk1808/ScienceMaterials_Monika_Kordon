@@ -1,10 +1,9 @@
 <div class="singleInput">
-  <label class="label">From</label>
+  <label class="label">{{displayName}}</label>
   <div class="select">
-    <select>
-      <option>Większy</option>
-      <option>Średni</option>
-      <option>Mniejszy</option>
+    <select ng-model="controlName">
+      <option ng-repeat="option in options" ng-value="option.value"  >{{option.display}}</option>
+
     </select>
   </div>
 </div>

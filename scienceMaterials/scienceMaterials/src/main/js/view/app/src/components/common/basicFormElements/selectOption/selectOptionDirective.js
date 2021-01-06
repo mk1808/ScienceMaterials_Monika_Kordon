@@ -7,9 +7,12 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/basicFormElements/selectOption/selectOption.html',
             scope:{
-                file: '=',
+                displayName: '@',
+                controlName: '=',
+                options: '='
             },
             link: function ($scope, element, attrs) {
+                
             }
         };
     });
