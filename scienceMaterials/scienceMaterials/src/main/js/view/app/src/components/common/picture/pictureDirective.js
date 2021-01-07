@@ -10,6 +10,7 @@ angular
                 picture: '=',
             },
             link: function ($scope, element, attrs) {
+                console.log($scope.picture)
             }
         };
     });
