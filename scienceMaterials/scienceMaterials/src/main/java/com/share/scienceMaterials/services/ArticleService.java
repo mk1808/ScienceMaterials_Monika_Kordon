@@ -109,7 +109,10 @@ private UserService userService;
 
 	public List<Part> getPartsByArticle(Long articleId){
 		List<Part> parts= partRepository.findByArticle(getArticleById(articleId));
-		
+		for (Part part:parts) {
+			part.setArticlesId(part.getArticle().getId());
+			part.setArticle(null);
+		}
 		return parts;
 	}
 	

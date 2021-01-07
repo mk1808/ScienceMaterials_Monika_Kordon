@@ -29,6 +29,7 @@ public class PartConverter {
 	      
 	      file.setId(dto.getId());
 	      file.setOrderNo(dto.getOrderNo());
+	      file.setType("f");
 	   
 	      return file;
 	   }
@@ -59,7 +60,7 @@ public class PartConverter {
 		      
 		   header.setId(dto.getId());
 		   header.setOrderNo(dto.getOrderNo());
-		
+		   header.setType("h");
 		      return header;
 		   }
 
@@ -87,7 +88,7 @@ public class PartConverter {
 		      
 		   link.setId(dto.getId());
 		   link.setOrderNo(dto.getOrderNo());
-		   
+		   link.setType("l");
 		      return link;   
 		   }
 	   
@@ -118,7 +119,7 @@ public class PartConverter {
 		      
 		      picture.setId(dto.getId());
 		      picture.setOrderNo(dto.getOrderNo());
-		  
+		      picture.setType("pi");
 		      return picture; 
 		   }
 	   
@@ -144,7 +145,7 @@ public class PartConverter {
 		      
 		   point.setId(dto.getId());
 		   point.setOrderNo(dto.getOrderNo());
-	
+		   point.setType("po");
 		      return point;
 		      
 		      
@@ -172,7 +173,7 @@ public class PartConverter {
 		      
 		   text.setId(dto.getId());
 		   text.setOrderNo(dto.getOrderNo());
-	
+		   text.setType("t");
 		      return text;  
 		   }
 	   
