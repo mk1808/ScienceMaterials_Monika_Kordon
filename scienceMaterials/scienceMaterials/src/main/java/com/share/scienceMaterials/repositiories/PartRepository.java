@@ -10,5 +10,5 @@ import java.util.List;
 
 @Repository
 public interface PartRepository extends JpaRepository<Part, Long>{
-	List<Part> findByArticle(Article article);
+	List<Part> findByArticleOrderByOrderNo(Article article);
 }

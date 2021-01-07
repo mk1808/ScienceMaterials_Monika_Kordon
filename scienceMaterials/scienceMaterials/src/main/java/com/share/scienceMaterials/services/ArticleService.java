@@ -108,7 +108,7 @@ private UserService userService;
 	
 
 	public List<Part> getPartsByArticle(Long articleId){
-		List<Part> parts= partRepository.findByArticle(getArticleById(articleId));
+		List<Part> parts= partRepository.findByArticleOrderByOrderNo(getArticleById(articleId));
 		for (Part part:parts) {
 			part.setArticlesId(part.getArticle().getId());
 			part.setArticle(null);
