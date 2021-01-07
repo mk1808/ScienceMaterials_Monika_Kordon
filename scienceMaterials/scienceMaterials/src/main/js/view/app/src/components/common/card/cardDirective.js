@@ -12,6 +12,9 @@ angular
             link: function ($scope, element, attrs) {
                 var scope = $scope;
                 console.log(scope.cardContent)
+                $scope.read = function(id){
+                    scope.$emit('readEvent', [id]);
+                }
             }
         };
     });

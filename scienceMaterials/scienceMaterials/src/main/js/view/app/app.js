@@ -12,12 +12,13 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         when('/home', {
           template: '<main-page-directive></main-page-directive>'///'<my-awesome-directive></my-awesome-directive>'
         })
-        .when('/article',{
-          template: '<single-article-directive></single-article-directive>'
-        })
-        .when('/article/new',{
+        .when('/articles/new',{
           template: '<add-article-directive></add-article-directive>'
         })
+        .when('/article/:id',{
+          template: '<single-article-directive></single-article-directive>'
+        })
+        
         .when('/register',{
           template: '<register-directive></register-directive>'
         })

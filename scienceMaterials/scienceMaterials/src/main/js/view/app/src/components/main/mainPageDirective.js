@@ -2,7 +2,7 @@
 
 angular
     .module('materialsApp')
-    .directive('mainPageDirective', ['ArticleRestService', function (articleRestService) {
+    .directive('mainPageDirective', ['ArticleRestService','$location', function (articleRestService, $location) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/main/mainPage.html',
@@ -23,6 +23,7 @@ angular
                 $scope.error = function(response){
                    console.log(response)
                 }
+                $scope.$on('readEvent', function(event, id) {  $location.path("article/"+id[0]); });
                 $scope.init();
             }
         };

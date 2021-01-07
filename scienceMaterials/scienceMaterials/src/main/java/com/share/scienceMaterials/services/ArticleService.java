@@ -63,8 +63,10 @@ private UserService userService;
 		if(parts.size()>0) {
 			article=getArticleById(parts.get(0).getArticleId());
 		}
-	
+		Long order=1L;
 		for (PartDto part : parts) {
+			part.setOrderNo(order);
+			order++;
 			switch (part.getType()) {
 			case "f":
 				File file = partConverter.createFileFromDto(part);

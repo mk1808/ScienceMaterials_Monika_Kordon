@@ -2,19 +2,21 @@
 
 angular
     .module('materialsApp')
-    .directive('singleArticleDirective', ['ArticleRestService',function (articleRestService) {
+    .directive('singleArticleDirective', ['ArticleRestService', '$routeParams',function (articleRestService, $routeParams) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/singleArticle/singleArticle.html',
             link: function ($scope, element, attrs) {
                 var scope=$scope;
+                $scope.articleId = $routeParams.id;
+            //    console.log(articleId)
                 $scope.article;
                 $scope.parts=[];
                 $scope.initialized = false;
                 $scope.init = function(){
                //     debugger;
-                    articleRestService.getArticleById(11, scope.success, scope.error);
-                    articleRestService.getPartsByArticleId(11,  scope.successParts,  scope.errorParts )
+                    articleRestService.getArticleById(11, scope.success, scope.error); // (scope.articleId, scope.success, scope.error);
+                    articleRestService.getPartsByArticleId(11,  scope.successParts,  scope.errorParts ) //  (scope.articleId, scope.successParts,  scope.errorParts )
                 }
                 $scope.success = function(response){
                     console.log(response) 

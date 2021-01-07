@@ -2,7 +2,7 @@
 
 angular
     .module('materialsApp')
-    .directive('usersArticlesDirective', ['DataShareService', 'UserRestService', function (dataShareService, userRestService) {
+    .directive('usersArticlesDirective', ['DataShareService', 'UserRestService', '$location', function (dataShareService, userRestService, $location) {
 
 
         return {
@@ -33,6 +33,9 @@ angular
                 }
                 $scope.error = function () {
                     console.log(response)
+                }
+                $scope.addArticle=function(){
+                    $location.path('articles/new')
                 }
 
                 $scope.init();
