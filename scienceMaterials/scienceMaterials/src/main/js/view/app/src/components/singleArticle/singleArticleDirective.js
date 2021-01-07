@@ -2,11 +2,46 @@
 
 angular
     .module('materialsApp')
-    .directive('singleArticleDirective', function () {
+    .directive('singleArticleDirective', ['ArticleRestService',function (articleRestService) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/singleArticle/singleArticle.html',
             link: function ($scope, element, attrs) {
+                var scope=$scope;
+                $scope.article;
+                $scope.parts=[];
+                $scope.initialized = false;
+                $scope.init = function(){
+               //     debugger;
+                    articleRestService.getArticleById(11, scope.success, scope.error);
+                    articleRestService.getPartsByArticleId(11,  scope.successParts,  scope.errorParts )
+                }
+                $scope.success = function(response){
+                    console.log(response) 
+                    scope.article = response.data;
+                    scope.initialized = true;
+                    
+                }
+                $scope.error = function(response){
+                   console.log(response)
+                }
+                $scope.successParts = function(response){
+                    console.log(response) 
+                    scope.parts = response.data;
+                    scope.initialized = true;
+                    
+                }
+                $scope.errorParts = function(response){
+                   console.log(response)
+                }
+
+                
+
+                $scope.init();
+
+
+
+
                 $scope.header= {size:"1", text:"Nagłówek 1"}
                 $scope.header1= {size:"2", text:"Nagłówek 2"}
                 $scope.header2= {size:"3", text:"Nagłówek 3"}
@@ -72,4 +107,4 @@ angular
                 
             }
         };
-    });
+    }]);

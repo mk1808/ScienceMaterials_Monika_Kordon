@@ -26,6 +26,21 @@ angular
                 url: 'api/articles/titleCategory?categories='+categories.trim()+'&title='+title.trim()
               }).then(successCallback, errorCallback);
         }
+        this.getArticleById = function(id, successCallback, errorCallback){
+            console.log("service")
+         //   let engCategories = dataShareService.toEngCategory(categories);
+            $http({
+                method: 'GET',
+                url: 'api/articles/'+id
+              }).then(successCallback, errorCallback);
+        }
+        this.getPartsByArticleId = function(id, successCallback, errorCallback){
+         //   let engCategories = dataShareService.toEngCategory(categories);
+            $http({
+                method: 'GET',
+                url: 'api/articles/parts/'+id
+              }).then(successCallback, errorCallback);
+        }
     }])
 
     //titleCategory?title=lore&categories=

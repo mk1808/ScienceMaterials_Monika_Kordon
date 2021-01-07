@@ -9,22 +9,52 @@ single article
     </div>
     <div class="card-content">
       <div>
-        <h1>Article Title</h1>
+        <h1>{{article.title}}</h1>
       </div>
       <div class="categories">
-        <div class="category">
-          <span>Technologia</span>
-        </div>
+      
+       
+            <span ng-repeat="category in article.categories" class="tag is-primary is-large">{{category}}</span>
+      <!--  <div class="category">   <span>Technologia</span></div>-->
+        
       </div>
       <div class="articleContent">
-        <simple-text-directive text="text"></simple-text-directive>
+        <div ng-repeat="part in parts">
+          <div ng-switch="part.type">
+            <div ng-switch-when="t">
+              <simple-text-directive text="part.content"></simple-text-directive>
+            </div>
+            <div ng-switch-when="po">
+              <point-directive points="part.content"></point-directive>
+            </div>
+            <div ng-switch-when="h">
+              <article-header-directive header = "part"></article-header-directive>
+            </div>
+            <div ng-switch-when="pi">
+              <picture-directive picture="part"></picture-directive>
+            </div>
+            <div ng-switch-when="l">
+              <link-directive link = "part"></link-directive>
+            </div>
+            <div ng-switch-when="f">
+              <file-directive file="part"></file-directive>
+            </div>
+
+          </div>
+          
+        </div>
+
+
+
+
+      <!--  <simple-text-directive text="text"></simple-text-directive>
         <point-directive points="points"></point-directive>
         <article-header-directive header = "header"></article-header-directive>
         <article-header-directive header = "header1"></article-header-directive>
         <article-header-directive header = "header2"></article-header-directive>
         <picture-directive picture="picture"></picture-directive>
         <link-directive link = "link"></link-directive>
-        <file-directive file="file"></file-directive>
+        <file-directive file="file"></file-directive>-->
 
 
         <div class="media">
@@ -32,7 +62,7 @@ single article
           <div class="media-content">
             <p class="title is-4">John Smith</p>
 
-            <time datetime="2016-1-1">1 Jan 2016</time>
+            <time datetime="2016-1-1">{{article.creationDate| date:'dd-MM-yyyy'}}</time>
           </div>
         </div>
 
