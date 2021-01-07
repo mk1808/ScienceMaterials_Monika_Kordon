@@ -49,7 +49,11 @@
   margin-top: 20px; }
 
 .singleArticle .card .card-content .categories {
+  margin-top: 20px;
   text-align: center; }
+  .singleArticle .card .card-content .categories .tag {
+    margin-left: 10px;
+    margin-right: 10px; }
 
 .singleArticle .card .card-content .media {
   text-align: end;
@@ -104,11 +108,12 @@
       text-align: left; }
     .singleArticle .card .articleContent .articleLink .author {
       text-align: end; }
-  .singleArticle .card .articleContent .points ul {
-    list-style: inside;
-    margin-left: 32px;
-    margin-top: 20px;
-    margin-bottom: 25px; }
+  .singleArticle .card .articleContent .points {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+    .singleArticle .card .articleContent .points ul {
+      list-style: inside;
+      margin-left: 32px; }
   .singleArticle .card .articleContent .media .title {
     margin-bottom: 8px; }
 

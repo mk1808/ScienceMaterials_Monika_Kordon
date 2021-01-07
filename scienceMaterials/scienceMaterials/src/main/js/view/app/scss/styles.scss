@@ -67,7 +67,12 @@
         }
 
         .categories {
+            margin-top:20px;
             text-align: center;
+            .tag{
+                margin-left:10px;
+                margin-right:10px;
+            }
         }
 
         .media {
@@ -145,11 +150,12 @@
         }
 
         .points {
+            margin-top: 5px;
+            margin-bottom:5px;
             ul {
                 list-style: inside;
                 margin-left: 32px;
-                margin-top: 20px;
-                margin-bottom:25px;
+               
             }
         }
 
