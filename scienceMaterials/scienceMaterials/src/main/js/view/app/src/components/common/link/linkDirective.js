@@ -10,6 +10,7 @@ angular
                 link: '=',
             },
             link: function ($scope, element, attrs) {
+                console.log($scope.link)
             }
         };
     });
