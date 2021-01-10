@@ -41,6 +41,15 @@ angular
                 url: 'api/articles/parts/'+id
               }).then(successCallback, errorCallback);
         }
+        this.saveArticle = function (article, successCallback, errorCallback) {
+            
+            $http({
+                method: 'POST',
+                url: 'api/articles',
+                data: article,
+                headers: { 'Content-Type': 'application/json' }
+            }).then(successCallback, errorCallback);
+        }
     }])
 
     //titleCategory?title=lore&categories=

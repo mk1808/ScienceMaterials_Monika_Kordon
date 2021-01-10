@@ -229,7 +229,7 @@
 
     .buttons{
         display: grid;
-        grid-template-columns: 120px 85px 120px;
+        grid-template-columns: 120px 85px 120px!important;
         justify-content: space-evenly!important;
     }
     .result{
@@ -259,3 +259,26 @@
         margin-top:32px;
     }
 }
+
+.creationPart{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 50px;
+    div{
+        cursor: pointer;
+        div{
+            padding: 20px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 47px;
+        }
+    }
+    .bag-one {
+        cursor: pointer;
+    }
+    
+    .bag-two{
+        cursor: pointer;
+    }
+}
+

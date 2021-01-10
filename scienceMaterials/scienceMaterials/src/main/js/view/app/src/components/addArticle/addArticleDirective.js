@@ -7,13 +7,39 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/addArticle/addArticle.html',
             link: function ($scope, element, attrs) {
-                debugger;
+              //  debugger;
+                var scope = $scope;
+                $scope.newArticleForm={
+                    title: "", summary: "", categories: ""
+                }
+                $scope.submit = function () {
+                    debugger;
+                    
+                        console.log(scope.registerForm);
+                        let article = scope.newArticleForm;
+                        let category = article.categories;
+                        scope.newArticleForm.categories = [];
+                        scope.newArticleForm.categories.push(category);
+                        scope.newArticleForm.usersId=17;
+                        articleRestService.saveArticle( scope.newArticleForm, scope.success, scope.error)
+                 
+
+                }
                 $scope.success=function(){
                     console.log("success")
                 }
                 $scope.error=function(){
                     console.log("error")
                 }
+            
+                $scope.searchForm = { title: "", category: "" };
+                $scope.options = [
+                    {display:"Wybierz",value:""},
+                    {display:"Biologia",value:"BIOLOGY"},
+                    {display:"Informatyka",value:"IT"},
+                    {display:"Chemia",value:"CHEMISTRY"},
+                    {display:"Fizyka",value:"PHYSICS"}];
+                 
                 articleRestService.getArticles(1, $scope.success, $scope.error);
                 $scope.header= {size:"1", text:"Nagłówek 1"}
                 $scope.header1= {size:"2", text:"Nagłówek 2"}
