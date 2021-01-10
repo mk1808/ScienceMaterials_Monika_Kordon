@@ -7,7 +7,8 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/basicFormElements/textarea/textarea.html',
             scope:{
-                file: '=',
+                displayName: '@',
+                controlName: '=',
             },
             link: function ($scope, element, attrs) {
             }
