@@ -2,19 +2,21 @@
   <div class="content formContent register">
     <div class="header">
       <h1>Tworzenie nowego artykułu</h1>
-  </div>
-<div>
-  <input-directive display-name="Tytuł artykułu" control-name="newArticleForm.title"></input-directive>
-  <textarea-directive display-name="Krótki opis treści artykułu" control-name="newArticleForm.summary"></textarea-directive>
-  <select-option-directive  display-name="Kategoria" control-name="newArticleForm.categories" options="options"></select-option-directive>
-</div>
+    </div>
+    <div>
+      <input-directive display-name="Tytuł artykułu" control-name="newArticleForm.title"></input-directive>
+      <textarea-directive display-name="Krótki opis treści artykułu" control-name="newArticleForm.summary">
+      </textarea-directive>
+      <select-option-directive display-name="Kategoria" control-name="newArticleForm.categories" options="options">
+      </select-option-directive>
+    </div>
 
-<div class="buttons">
-  <button class="button" ng-click="clear()">Wyczyść</button>
-  <div></div>
-  <button class="button is-primary" ng-click="submit()">Zapisz</button>
-</div>
-<!--
+    <div class="buttons">
+      <button class="button" ng-click="clear()">Wyczyść</button>
+      <div></div>
+      <button class="button is-primary" ng-click="submit()">Zapisz</button>
+    </div>
+    <!--
 /////////////////////////
 <div class="singleInput">
   <label class="label">Kategoria</label>
@@ -61,33 +63,35 @@
     </div>
   </div>
 </div>-->
-<div class="creationPart">
-  <div dragula="bag-one">
-    <div>abc1</div>
-    <div>abc2</div>
-    <div>abc3</div>
+<!--
+    <div class="creationPart">
+      <div dragula="bag-one">
+        <div>abc1</div>
+        <div>abc2</div>
+        <div>abc3</div>
+      </div>
+      <div dragula="bag-two">
+        <div>abc4</div>
+        <div>abc5</div>
+        <div>abc6</div>
+      </div>
+    </div>
   </div>
-  <div dragula="bag-two">
-    <div>abc4</div>
-    <div>abc5</div>
-    <div>abc6</div>
-  </div>
+
+  <br><br><br><br><br>
+  <article-header-form-field-directive></article-header-form-field-directive>
+  <simple-text-form-field-directive></simple-text-form-field-directive>
+  <link-form-field-directive></link-form-field-directive>
+  <file-form-field-directive></file-form-field-directive>
+  <point-form-field-directive></point-form-field-directive>
+  <picture-form-field-directive></picture-form-field-directive>
+
+  <br><br><br><br><br>
+
+  <input-directive></input-directive>
+  <textarea-directive></textarea-directive>
+  <select-option-directive></select-option-directive>
+  <file-form-directive></file-form-directive>
+  -->
 </div>
-</div>
-
-<br><br><br><br><br>
-<article-header-form-field-directive></article-header-form-field-directive>
-<simple-text-form-field-directive></simple-text-form-field-directive>
-<link-form-field-directive></link-form-field-directive>
-<file-form-field-directive></file-form-field-directive>
-<point-form-field-directive></point-form-field-directive>
-<picture-form-field-directive></picture-form-field-directive>
-
-<br><br><br><br><br>
-
-    <input-directive></input-directive>
-    <textarea-directive></textarea-directive>
-    <select-option-directive></select-option-directive>
-    <file-form-directive></file-form-directive>
-  </div>
 </div>

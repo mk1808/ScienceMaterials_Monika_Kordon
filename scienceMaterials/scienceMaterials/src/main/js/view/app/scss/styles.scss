@@ -218,6 +218,9 @@
         min-height: 1000px;
         padding: 50px 180px!important;
     }
+    .addPartsContent{
+        padding: 50px 40px;
+    }
 
     
 }
@@ -262,7 +265,7 @@
 
 .creationPart{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 30% 63%;
     grid-column-gap: 50px;
     div{
         cursor: pointer;
@@ -279,6 +282,37 @@
     
     .bag-two{
         cursor: pointer;
+       
+    }
+    .sandbox{
+ border: 1px solid black;
+    min-height: 1200px;
+    padding: 20px;
+    p{
+        font-size: 36px;
+    color: #aaaaaa;
+    }
     }
 }
-
+.gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+  .gu-hide {
+    display: none !important;
+  }
+  .gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  .gu-transit {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
