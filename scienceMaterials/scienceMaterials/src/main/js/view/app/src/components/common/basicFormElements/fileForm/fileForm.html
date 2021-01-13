@@ -1,8 +1,8 @@
-<div class="singleInput fileInput">
-  <label class="label">From</label>
+<div class="singleInput fileInput" id="fileInput">
+  <label class="label">{{displayName}}</label>
   <div class="file has-name">
     <label class="file-label">
-      <input class="file-input" type="file" name="resume">
+      <input class="file-input" type="file"  select-ng-files name="resume"  ng-model="controlName">
       <span class="file-cta">
         <span class="file-icon">
           <i class="fas fa-upload"></i>
@@ -12,7 +12,7 @@
         </span>
       </span>
       <span class="file-name">
-        Screen Shot 2017-07-29 at 15.54.25.png
+        {{controlName}}
       </span>
     </label>
   </div>

@@ -7,7 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/form/pictureFormField/pictureFormField.html',
             scope:{
-                picture: '=',
+                formData: '=',
             },
             link: function ($scope, element, attrs) {
             }

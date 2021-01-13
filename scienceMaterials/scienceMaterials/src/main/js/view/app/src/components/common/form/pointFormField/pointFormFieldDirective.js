@@ -7,7 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/form/pointFormField/pointFormField.html',
             scope:{
-                point: '=',
+                formData: '=',
             },
             link: function ($scope, element, attrs) {
             }

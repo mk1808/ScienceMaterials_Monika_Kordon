@@ -7,7 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/form/fileFormField/fileFormField.html',
             scope:{
-                file: '=',
+                formData: '=',
             },
             link: function ($scope, element, attrs) {
             }

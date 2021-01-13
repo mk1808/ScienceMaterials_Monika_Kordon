@@ -7,7 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/form/linkFormField/linkFormField.html',
             scope:{
-                link: '=',
+                formData: '=',
             },
             link: function ($scope, element, attrs) {
             }

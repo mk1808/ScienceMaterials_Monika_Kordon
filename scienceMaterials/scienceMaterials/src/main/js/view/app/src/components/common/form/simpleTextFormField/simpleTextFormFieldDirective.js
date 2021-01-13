@@ -7,7 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/form/simpleTextFormField/simpleTextFormField.html',
             scope:{
-                simpleText: '=',
+                formData: '=',
             },
             link: function ($scope, element, attrs) {
             }
