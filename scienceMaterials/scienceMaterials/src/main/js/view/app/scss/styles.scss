@@ -283,6 +283,7 @@
     display: grid;
     grid-template-columns: 30% 63%;
     grid-column-gap: 50px;
+    margin-bottom:30px;
 
     .source {
         cursor: pointer;
@@ -305,25 +306,38 @@
     }
 
     .sandbox {
-        cursor: pointer;
+     cursor: pointer;
 
-        .item {
-            padding: 20px;
-            margin: 5px;
-            border: 1px solid black;
-            border-radius: 47px;
-        }
+     .item {
+         padding: 20px;
+         margin: 5px;
+         border: 1px solid black;
+         border-radius: 47px;
+         background: rgb(255, 255, 255);
+         background: linear-gradient(0deg, rgba(255, 255, 255, 1) calc(100% - 72px), rgba(34, 193, 195, 1) 100%);
 
-        border: 1px solid black;
-        min-height: 1200px;
-        padding: 20px;
+         .name {
+             margin-bottom: 20px;
 
-        p {
-            font-size: 36px;
-            color: #aaaaaa;
-        }
-    }
-}
+             span {
+                 font-size: 23px;
+                 letter-spacing: 2px;
+                 margin-right: 10px;
+
+             }
+         }
+     }
+
+     border: 1px solid black;
+     min-height: 1200px;
+     padding: 20px;
+
+     p {
+         font-size: 36px;
+         color: #aaaaaa;
+     }
+ }
+ }
 
 .gu-mirror {
     position: fixed !important;

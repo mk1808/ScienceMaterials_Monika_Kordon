@@ -185,7 +185,8 @@
 .creationPart {
   display: grid;
   grid-template-columns: 30% 63%;
-  grid-column-gap: 50px; }
+  grid-column-gap: 50px;
+  margin-bottom: 30px; }
   .creationPart .source {
     cursor: pointer; }
     .creationPart .source .item {
@@ -206,7 +207,15 @@
       padding: 20px;
       margin: 5px;
       border: 1px solid black;
-      border-radius: 47px; }
+      border-radius: 47px;
+      background: white;
+      background: linear-gradient(0deg, white calc(100% - 72px), #22c1c3 100%); }
+      .creationPart .sandbox .item .name {
+        margin-bottom: 20px; }
+        .creationPart .sandbox .item .name span {
+          font-size: 23px;
+          letter-spacing: 2px;
+          margin-right: 10px; }
     .creationPart .sandbox p {
       font-size: 36px;
       color: #aaaaaa; }
