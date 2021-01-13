@@ -6,21 +6,43 @@ PARTS
     </div>
     <div>
       <div class="creationPart">
-        <div dragula='"bag-one"' >
-          <div>Tekst</div>
-          <div>Obraz</div>
-          <div>Plik</div>
-          <div>Link</div>
-          <div>Nagłówek</div>
-          <div>Punktor</div>
+        <div dragula='"bag-one"' class="source" dragula-model='elements'>
+          <div class="item" ng-repeat='text in elements'>{{text.type}}</div>
         </div>
-        <div dragula='"bag-one"' class="sandbox" >
-
-          <p>Tutaj przeciągnij wybrane elementy artykułu</p>
+        <div dragula='"bag-one"' class="sandbox" dragula-model='parts'>
+          <div class="noDrag item" ng-repeat='part in parts'>{{part.type}}
+            <button class="noDrag" ng-click="up($index)">^</button>
+            <button class="noDrag" ng-click="down($index)">v</button>
+            <div ng-switch="part.type">
+              <div ng-switch-when="Tekst">
+                <simple-text-form-field-directive input="newText"></simple-text-form-field-directive>
+              </div>
+              <div ng-switch-when="Punktor">
+               
+  <point-form-field-directive></point-form-field-directive>
+              </div>
+              <div ng-switch-when="Nagłówek">
+                <article-header-form-field-directive form-data="part.data"></article-header-form-field-directive>
+              </div>
+              <div ng-switch-when="Obraz">
+                <picture-form-field-directive></picture-form-field-directive>
+              </div>
+              <div ng-switch-when="Link">
+                <link-form-field-directive></link-form-field-directive>
+              </div>
+              <div ng-switch-when="Plik">
+                <file-form-field-directive></file-form-field-directive>
+              </div>
+            </div>
+          </div>
+          <p ng-if="parts.length<1">Tutaj przeciągnij wybrane elementy artykułu</p>
         </div>
       </div>
     </div>
-
-
   </div>
-</div>
+
+
+
+
+
+

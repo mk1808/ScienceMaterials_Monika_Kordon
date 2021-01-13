@@ -186,9 +186,9 @@
   display: grid;
   grid-template-columns: 30% 63%;
   grid-column-gap: 50px; }
-  .creationPart div {
+  .creationPart .source {
     cursor: pointer; }
-    .creationPart div div {
+    .creationPart .source .item {
       padding: 20px;
       margin: 5px;
       border: 1px solid black;
@@ -198,9 +198,15 @@
   .creationPart .bag-two {
     cursor: pointer; }
   .creationPart .sandbox {
+    cursor: pointer;
     border: 1px solid black;
     min-height: 1200px;
     padding: 20px; }
+    .creationPart .sandbox .item {
+      padding: 20px;
+      margin: 5px;
+      border: 1px solid black;
+      border-radius: 47px; }
     .creationPart .sandbox p {
       font-size: 36px;
       color: #aaaaaa; }

@@ -35,11 +35,11 @@
 }
 
 .cardFromGrid .card {
-  margin:40px 20px ;
+    margin: 40px 20px;
 
-  .card-content {
-  min-height: 195px;
-  }
+    .card-content {
+        min-height: 195px;
+    }
 }
 
 .singleArticle .card {
@@ -48,7 +48,7 @@
     }
 
     .card-content {
-      
+
         h1 {
             text-align: center;
             font-size: 81px;
@@ -67,11 +67,12 @@
         }
 
         .categories {
-            margin-top:20px;
+            margin-top: 20px;
             text-align: center;
-            .tag{
-                margin-left:10px;
-                margin-right:10px;
+
+            .tag {
+                margin-left: 10px;
+                margin-right: 10px;
             }
         }
 
@@ -119,8 +120,8 @@
             width: 500px;
             margin-left: auto;
             margin-right: auto;
-            margin-top:25px;
-            margin-bottom:25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
             text-align: center;
 
             .border {
@@ -151,11 +152,12 @@
 
         .points {
             margin-top: 5px;
-            margin-bottom:5px;
+            margin-bottom: 5px;
+
             ul {
                 list-style: inside;
                 margin-left: 32px;
-               
+
             }
         }
 
@@ -168,132 +170,161 @@
     }
 }
 
-.addArticle{
+.addArticle {
     text-align: center;
-    margin-top:50px;
-    .formContent{
+    margin-top: 50px;
+
+    .formContent {
         width: 1000px;
         margin-left: auto;
         margin-right: auto;
         border: 1px solid black;
         min-height: 1000px;
         padding: 50px 200px;
+
         .singleInput {
             width: 320px;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
-            & label{
-                text-align: left; 
+
+            & label {
+                text-align: left;
             }
-            textarea{
+
+            textarea {
                 width: auto;
             }
-            .file{
+
+            .file {
                 justify-content: center;
             }
         }
-        .areaInput{
-            width:auto!important;
+
+        .areaInput {
+            width: auto !important;
         }
 
-        .fileInput{
-            width:400px;
-        }         
-        input { 
-           
-            width:320px;
+        .fileInput {
+            width: 400px;
         }
+
+        input {
+
+            width: 320px;
+        }
+
         select {
             width: 320px;
         }
-        
-    
+
+
     }
-    .tableContent{
+
+    .tableContent {
         width: 1000px;
         margin-left: auto;
         margin-right: auto;
         border: 1px solid black;
         min-height: 1000px;
-        padding: 50px 180px!important;
+        padding: 50px 180px !important;
     }
-    .addPartsContent{
+
+    .addPartsContent {
         padding: 50px 40px;
     }
 
-    
+
 }
 
-.register{
-    .header{
-        margin-bottom:30px;
+.register {
+    .header {
+        margin-bottom: 30px;
     }
 
-    .buttons{
+    .buttons {
         display: grid;
-        grid-template-columns: 120px 85px 120px!important;
-        justify-content: space-evenly!important;
+        grid-template-columns: 120px 85px 120px !important;
+        justify-content: space-evenly !important;
     }
-    .result{
+
+    .result {
         margin-top: 20px;
-   
+
         border: 1px dashed black;
         padding: 10px;
         border-radius: 30px;
     }
-    
+
 }
-.userArticles{
-    .header{
-        margin-bottom:30px;
-        &.marginTop{
+
+.userArticles {
+    .header {
+        margin-bottom: 30px;
+
+        &.marginTop {
             margin-top: 30px;
         }
     }
 }
 
 
-.searchBar{
+.searchBar {
     display: grid;
     grid-template-columns: 30% 20% 20% 30%;
     grid-column-gap: 50px;
-    .button{
-        margin-top:32px;
+
+    .button {
+        margin-top: 32px;
     }
 }
 
-.creationPart{
+.creationPart {
     display: grid;
     grid-template-columns: 30% 63%;
     grid-column-gap: 50px;
-    div{
+
+    .source {
         cursor: pointer;
-        div{
+
+        .item {
             padding: 20px;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 47px;
+            margin: 5px;
+            border: 1px solid black;
+            border-radius: 47px;
         }
     }
+
     .bag-one {
         cursor: pointer;
     }
-    
-    .bag-two{
+
+    .bag-two {
         cursor: pointer;
-       
+
     }
-    .sandbox{
- border: 1px solid black;
-    min-height: 1200px;
-    padding: 20px;
-    p{
-        font-size: 36px;
-    color: #aaaaaa;
-    }
+
+    .sandbox {
+        cursor: pointer;
+
+        .item {
+            padding: 20px;
+            margin: 5px;
+            border: 1px solid black;
+            border-radius: 47px;
+        }
+
+        border: 1px solid black;
+        min-height: 1200px;
+        padding: 20px;
+
+        p {
+            font-size: 36px;
+            color: #aaaaaa;
+        }
     }
 }
+
 .gu-mirror {
     position: fixed !important;
     margin: 0 !important;
@@ -301,18 +332,21 @@
     opacity: 0.8;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
-  }
-  .gu-hide {
+}
+
+.gu-hide {
     display: none !important;
-  }
-  .gu-unselectable {
+}
+
+.gu-unselectable {
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-  }
-  .gu-transit {
+}
+
+.gu-transit {
     opacity: 0.2;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
     filter: alpha(opacity=20);
-  }
+}

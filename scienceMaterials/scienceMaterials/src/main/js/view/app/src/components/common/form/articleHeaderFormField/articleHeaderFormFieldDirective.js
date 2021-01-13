@@ -7,7 +7,7 @@ angular
             restrict: 'E',
             templateUrl: '/src/components/common/form/articleHeaderFormField/articleHeaderFormField.html',
             scope:{
-                file: '=',
+                formData: '=',
             },
             link: function ($scope, element, attrs) {
             }
