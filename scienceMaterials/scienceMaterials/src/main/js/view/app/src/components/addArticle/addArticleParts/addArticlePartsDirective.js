@@ -10,12 +10,16 @@ angular
             link: function ($scope, element, attrs) {
                 var scope = $scope;
                 $scope.elements = [
-                    {type:'Tekst', id:1, data:{}}, 
-                    {type:'Obraz', id:2, data:{}},
-                    {type:'Plik', id:3, data:{}},
-                    {type:'Link', id:4, data:{}},
-                    {type:'Nagłówek', id:5, data:{size:"", text:""}},
-                    {type:'Punktor', id:6, data:{}}
+                    {type:'Tekst', id:1, data:{content:""}}, 
+                    {type:'Obraz', id:2, data:{source:"", description:""}},
+                    {type:'Plik', id:3, data:{source:[], description:"", name:""}},
+                    {type:'Link', id:4, data:{source:"", description:"", text:""}},
+                    {type:'Nagłówek', id:5, data:{size:"", text:"", options:[
+                        {display:"Mały",value:3},
+                        {display:"Średni",value:2},
+                        {display:"Duży",value:1}
+                    ]}},
+                    {type:'Punktor', id:6, data:{content:""}}
                 ]
                 $scope.parts = [];
                 $scope.i=0;
@@ -64,7 +68,7 @@ angular
                     console.log(scope.parts.length)
                     console.log(scope.parts);
                     switch(el[0].innerHTML){
-                        case 'Tekst':{scope.form={content:""}}
+                        case 'Tekst':{}
                         break;
                         case 'Punktor':{}
                         break;
@@ -91,7 +95,21 @@ angular
 
                 }
                 $scope.submit = function () {
-
+                    debugger;
+                    var body=[];
+                  let i=0;
+                    for (let part of scope.parts){
+                        let newPart=part.data;
+                      //  newPart.type = part.type;
+                        
+                      newPart.type="t";
+                      newPart.articleId=11;
+                        newPart.orderNo=i;
+                        body.push(newPart);
+                        i++;
+                    }
+                    articleRestService.saveArticleParts( body, scope.success, scope.error)
+                    console.log(scope.parts)
                 }
                 $scope.success = function () {
                     console.log("success")

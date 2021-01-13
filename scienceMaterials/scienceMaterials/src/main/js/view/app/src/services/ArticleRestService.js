@@ -50,6 +50,16 @@ angular
                 headers: { 'Content-Type': 'application/json' }
             }).then(successCallback, errorCallback);
         }
+        this.saveArticleParts = function (parts, successCallback, errorCallback) {
+            
+            $http({
+                method: 'POST',
+                url: 'api/articles/parts',
+                data: parts,
+                headers: { 'Content-Type': 'application/json' }
+            }).then(successCallback, errorCallback);
+        }
+       // http://localhost:8080/api/articles/parts
     }])
 
     //titleCategory?title=lore&categories=
