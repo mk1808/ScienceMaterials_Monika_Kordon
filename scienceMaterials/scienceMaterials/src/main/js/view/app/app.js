@@ -12,7 +12,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         when('/home', {
           template: '<main-page-directive></main-page-directive>'///'<my-awesome-directive></my-awesome-directive>'
         })
-        .when('/article/new/parts',{
+        .when('/article/new/parts/:id',{
           template: '<add-article-parts-directive></add-article-parts-directive>'
         })
         .when('/article/new',{

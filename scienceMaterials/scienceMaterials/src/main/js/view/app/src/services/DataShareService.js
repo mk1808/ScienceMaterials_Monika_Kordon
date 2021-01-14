@@ -20,6 +20,33 @@ angular
             }
         }
 
+        this.partTypeToPol = function(type){
+            switch(type){
+
+                case "f": return "Plik";
+                case "h": return "Nagłówek";
+                case "l":return "Link";
+                case "pi":return "Obraz";
+                case "po":return "Punktor";
+                case "t":return "Tekst";
+            
+            }
+        }
+
+        this.partTypeToEng = function(type){
+            switch(type){
+
+                case "Plik": return "f";
+                case "Nagłówek": return "h";
+                case "Link":return "l";
+                case "Obraz":return "pi";
+                case "Punktor":return "po";
+                case "Tekst":return "t";
+            
+            }
+        }
+
+
         this.toPolCategory = function(){
 
         }

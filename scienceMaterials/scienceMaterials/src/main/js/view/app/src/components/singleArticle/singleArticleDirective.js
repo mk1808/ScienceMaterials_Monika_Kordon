@@ -15,8 +15,8 @@ angular
                 $scope.initialized = false;
                 $scope.init = function(){
                //     debugger;
-                    articleRestService.getArticleById(11, scope.success, scope.error); // (scope.articleId, scope.success, scope.error);
-                    articleRestService.getPartsByArticleId(11,  scope.successParts,  scope.errorParts ) //  (scope.articleId, scope.successParts,  scope.errorParts )
+                    articleRestService.getArticleById(scope.articleId, scope.success, scope.error); // (scope.articleId, scope.success, scope.error);
+                    articleRestService.getPartsByArticleId(scope.articleId,  scope.successParts,  scope.errorParts ) //  (scope.articleId, scope.successParts,  scope.errorParts )
                 }
                 $scope.success = function(response){
                     console.log(response) 

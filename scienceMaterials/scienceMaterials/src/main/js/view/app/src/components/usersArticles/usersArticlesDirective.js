@@ -35,7 +35,7 @@ angular
                     console.log(response)
                 }
                 $scope.addArticle=function(){
-                    $location.path('articles/new')
+                    $location.path('article/new')
                 }
 
                 $scope.init();

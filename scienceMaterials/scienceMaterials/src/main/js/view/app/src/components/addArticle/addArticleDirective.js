@@ -2,13 +2,14 @@
 
 angular
     .module('materialsApp')
-    .directive('addArticleDirective',['ArticleRestService', function (articleRestService) {
+    .directive('addArticleDirective',['ArticleRestService', '$location', function (articleRestService, $location) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/addArticle/addArticle.html',
             link: function ($scope, element, attrs) {
               //  debugger;
                 var scope = $scope;
+                var createdArticleId;
                 $scope.newArticleForm={
                     title: "", summary: "", categories: ""
                 }
@@ -25,8 +26,10 @@ angular
                  
 
                 }
-                $scope.success=function(){
-                    console.log("success")
+                $scope.success=function(response){
+                    scope.createdArticleId = response.data.id;
+                    $location.path(`article/new/parts/${scope.createdArticleId}`);
+                    console.log(response)
                 }
                 $scope.error=function(){
                     console.log("error")

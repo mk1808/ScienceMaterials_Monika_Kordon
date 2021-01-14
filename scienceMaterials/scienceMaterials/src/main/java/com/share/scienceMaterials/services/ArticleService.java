@@ -52,6 +52,7 @@ private UserService userService;
 	
 	public Article createArticle(Article article) {
 		article.setCreationDate(new Date());
+		long t = new Date().getTime();
 		AppUser user = userService.getUserById(article.getUsersId());
 		article.setUser(user);
 		

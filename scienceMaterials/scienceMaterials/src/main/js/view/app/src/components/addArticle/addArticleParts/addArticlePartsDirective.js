@@ -2,13 +2,16 @@
 
 angular
     .module('materialsApp')
-    .directive('addArticlePartsDirective', ['ArticleRestService', 'dragulaService','$timeout', function (articleRestService, dragulaService, $timeout) {
+    .directive('addArticlePartsDirective', ['ArticleRestService', 'DataShareService','dragulaService','$timeout', '$routeParams', '$location', 
+    function (articleRestService, dataShareService, dragulaService, $timeout, $routeParams, $location) {
 
         return {
             restrict: 'E',
             templateUrl: '/src/components/addArticle/addArticleParts/addArticleParts.html',
             link: function ($scope, element, attrs) {
                 var scope = $scope;
+                $scope.articleId = $routeParams.id;
+
                 $scope.elements = [
                     {type:'Tekst', id:1, data:{content:""}}, 
                     {type:'Obraz', id:2, data:{source:"", description:""}},
@@ -101,9 +104,9 @@ angular
                     for (let part of scope.parts){
                         let newPart=part.data;
                       //  newPart.type = part.type;
-                        
-                      newPart.type="t";
-                      newPart.articleId=11;
+                     
+                      newPart.type=dataShareService.partTypeToEng(part.type);
+                      newPart.articleId=scope.articleId;
                         newPart.orderNo=i;
                         body.push(newPart);
                         i++;
@@ -112,7 +115,7 @@ angular
                     console.log(scope.parts)
                 }
                 $scope.success = function () {
-                    console.log("success")
+                    $location.path('/user');
                 }
                 $scope.error = function () {
                     console.log("error")
