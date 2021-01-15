@@ -11,7 +11,7 @@ angular
             },
             link: function ($scope, element, attrs) {
                 var scope=$scope;
-                $scope.PATH = 'http://localhost:8080/api/articles/files/'+scope.file.source;
+                $scope.PATH = '/api/articles/files/'+scope.file.source;
                 console.log($scope.file)
                 
                 $scope.download = function(){

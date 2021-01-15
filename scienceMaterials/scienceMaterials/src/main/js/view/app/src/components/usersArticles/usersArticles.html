@@ -12,6 +12,9 @@ ARTICLES USERR
           <th><abbr title="category">Kategorie</abbr></th>
           <th><abbr title="creationDate">Data utworzenia</th>
           <th><abbr title="views">Liczba wyświetleń</abbr></th>
+          <th><abbr title="edit">Edytuj</abbr></th>
+          <th><abbr title="delete">Usuń</abbr></th>
+          
         </tr>
       </thead>
       <tbody>
@@ -21,6 +24,8 @@ ARTICLES USERR
           <td>23</td>
           <td>{{article.creationDate| date:'dd-MM-yyyy'}}</td>
           <td>3</td>
+          <td><i ng-click="edit(article.id)" class="fas fa-edit"></i></td>
+          <td><i ng-click="remove(article.id)"class="far fa-trash-alt"></i></td>
         </tr>
       </tbody>
     </table>
