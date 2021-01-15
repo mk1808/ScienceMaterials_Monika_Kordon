@@ -11,11 +11,11 @@ angular
             link: function ($scope, element, attrs) {
                 var scope = $scope;
                 $scope.articleId = $routeParams.id;
-
+                $scope.savedFilesPaths = [];
                 $scope.elements = [
                     {type:'Tekst', id:1, data:{content:""}}, 
                     {type:'Obraz', id:2, data:{source:"", description:""}},
-                    {type:'Plik', id:3, data:{source:[], description:"", name:""}},
+                    {type:'Plik', id:3, data:{source:{}, description:"", name:""}},
                     {type:'Link', id:4, data:{source:"", description:"", text:""}},
                     {type:'Nagłówek', id:5, data:{size:"", text:"", options:[
                         {display:"Mały",value:3},
@@ -98,21 +98,13 @@ angular
 
                 }
                 $scope.submit = function () {
+                    let files = scope.parts.filter(part=>part.type==="Plik");
+                    articleRestService.saveFiles(files, scope.saveFilesSuccess, scope.saveFilesError);
                     debugger;
-                    var body=[];
-                  let i=0;
-                    for (let part of scope.parts){
-                        let newPart=part.data;
-                      //  newPart.type = part.type;
-                     
-                      newPart.type=dataShareService.partTypeToEng(part.type);
-                      newPart.articleId=scope.articleId;
-                        newPart.orderNo=i;
-                        body.push(newPart);
-                        i++;
-                    }
-                    articleRestService.saveArticleParts( body, scope.success, scope.error)
-                    console.log(scope.parts)
+                   
+                    
+                   
+                    
                 }
                 $scope.success = function () {
                     $location.path('/user');
@@ -120,6 +112,40 @@ angular
                 $scope.error = function () {
                     console.log("error")
                 }
+                $scope.saveFilesSuccess = function (response) {
+                    scope.savedFilesPaths = response.data;
+                    console.log(response)
+                    console.log("success")
+                    var body = [];
+                    let i = 0;
+                    let filesInPartsIndex=0;
+                    let fileOrderNo=0;
+                    let pictureOrderNo=0;
+
+                    for (let part of scope.parts) {
+                        let newPart = part.data;
+                        //  newPart.type = part.type;
+                        
+                        newPart.type = dataShareService.partTypeToEng(part.type);
+                        if(newPart.type==='f'){
+                            newPart.extension=newPart.source.file[0].name.split(".")[1];
+                            newPart.source = scope.savedFilesPaths[filesInPartsIndex];
+                            filesInPartsIndex++;
+                            fileOrderNo++;
+                          
+                            newPart.fileOrderNo = filesInPartsIndex;
+                        }
+                        newPart.articleId = scope.articleId;
+                        newPart.orderNo = i;
+                        body.push(newPart);
+                        i++;
+                } articleRestService.saveArticleParts(body, scope.success, scope.error)
+                console.log(scope.parts)
+            }
+                $scope.saveFilesError = function () {
+                    console.log("error")
+                }
+                    
 
 
             }

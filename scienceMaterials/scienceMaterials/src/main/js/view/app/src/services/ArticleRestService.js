@@ -59,6 +59,28 @@ angular
                 headers: { 'Content-Type': 'application/json' }
             }).then(successCallback, errorCallback);
         }
+        this.saveFiles = function(files, successCallback, errorCallback){
+           debugger;
+            let formData=new FormData();
+         
+            for(let file of files){
+                 formData.append("files", file.data.source.file[0]);  
+            }
+            
+            $http.post('api/articles/files', formData, 
+            
+            {
+                headers: { 'Content-Type': undefined },
+                transformRequest: angular.identity
+            }).then(successCallback, errorCallback);
+        }
+        this.getFile = function(fileName, successCallback, errorCallback){
+            //   let engCategories = dataShareService.toEngCategory(categories);
+               $http({
+                   method: 'GET',
+                   url: 'api/articles/files/'+fileName
+                 }).then(successCallback, errorCallback);
+           }
        // http://localhost:8080/api/articles/parts
     }])
 
