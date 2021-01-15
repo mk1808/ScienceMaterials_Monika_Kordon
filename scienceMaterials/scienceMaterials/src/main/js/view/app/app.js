@@ -34,6 +34,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         .when('/search',{
           template: '<search-articles-directive></search-articles-directive>'
         })
+        .when('/contact',{
+          template: '<contact-directive></contact-directive>'
+        })
         .otherwise('/home');
   ; 
 
