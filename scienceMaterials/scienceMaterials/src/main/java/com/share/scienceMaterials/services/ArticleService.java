@@ -171,6 +171,15 @@ private UserService userService;
 		return articlesCategory;
 	}
 	
+	public Article editArticle(Long articleId, Article newArticle) {
+		Article oldArticle = getArticleById(articleId);
+		oldArticle.setCategories(newArticle.getCategories());
+		oldArticle.setSummary(newArticle.getSummary());
+		oldArticle.setTitle(newArticle.getTitle());
+		return articleRepository.save(oldArticle);
+		
+	}
+	
 /*	public Set<Article> getArticlesByTitlePartAndCategory2(String title, Set<ArticleCategory> categories) {
 
 		Set<Article> articles = articleRepository.getArticlesByTitlePartAndCategories(title, new ArrayList<>(categories));

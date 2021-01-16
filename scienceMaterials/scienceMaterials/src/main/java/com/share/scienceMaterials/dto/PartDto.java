@@ -6,11 +6,15 @@ import javax.persistence.ManyToOne;
 
 import com.share.scienceMaterials.entities.Article;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PartDto {
 
 	private Long id;
