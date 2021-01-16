@@ -47,7 +47,12 @@ angular
         }
 
 
-        this.toPolCategory = function(){
-
+        this.toPolCategory = function(category){
+            switch(category){
+                case "BIOLOGY": return "Biologia"
+                case "IT": return  "Informatyka";
+                case "CHEMISTRY": return "Chemia";
+                case "PHYSICS":return "Fizyka"
+            }
         }
     }])

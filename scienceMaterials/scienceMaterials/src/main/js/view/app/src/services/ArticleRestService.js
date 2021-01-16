@@ -81,6 +81,16 @@ angular
                    url: 'api/articles/files/'+fileName
                  }).then(successCallback, errorCallback);
            }
+
+           this.editArticle = function (id, article, successCallback, errorCallback) {
+            
+            $http({
+                method: 'PUT',
+                url: 'api/articles/'+id,
+                data: article,
+                headers: { 'Content-Type': 'application/json' }
+            }).then(successCallback, errorCallback);
+        }
        // http://localhost:8080/api/articles/parts
     }])
 

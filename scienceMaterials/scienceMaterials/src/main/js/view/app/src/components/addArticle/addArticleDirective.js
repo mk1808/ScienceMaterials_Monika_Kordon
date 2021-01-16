@@ -2,17 +2,49 @@
 
 angular
     .module('materialsApp')
-    .directive('addArticleDirective',['ArticleRestService', '$location', function (articleRestService, $location) {
+    .directive('addArticleDirective',['ArticleRestService','DataShareService', '$location','$routeParams', function (articleRestService, dataShareService, $location, $routeParams) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/addArticle/addArticle.html',
             link: function ($scope, element, attrs) {
-              //  debugger;
+                //debugger;
                 var scope = $scope;
                 var createdArticleId;
+                $scope.editing=false;
+                $scope.editingArticleId;
+                $scope.title="Tworzenie nowego artykułu";
+                $scope.editingArticle;
                 $scope.newArticleForm={
                     title: "", summary: "", categories: ""
                 }
+                $scope.getArticleSuccess = function(response){
+                    debugger;
+                  
+                    scope.editingArticle = response.data;
+                    scope.title=`Edycja artykułu ${scope.editingArticle.id}`;
+                    console.log(response.data);
+                    
+                    scope.newArticleForm.title=scope.editingArticle.title;
+                    scope.newArticleForm.summary=scope.editingArticle.summary;
+                    scope.newArticleForm.categories=scope.editingArticle.categories[0]; //dataShareService.toPolCategory(scope.editingArticle.categories[0]);
+                }
+                $scope.getArticleError = function(){
+                    
+                }
+                $scope.init=function(){
+                  //  debugger;
+                    if($routeParams.id){
+                    scope.editing=true;
+                    
+                    scope.editingArticleId = $routeParams.id;
+                    articleRestService.getArticleById(scope.editingArticleId, scope.getArticleSuccess, scope.getArticleError); // (scope.articleId, scope.success, scope.error);
+                  
+                //    articleRestService.editArticle(   scope.editingArticleId, scope.newArticleForm, scope.success, scope.error)
+                    }
+                }
+                $scope.init();
+              
+               
                 $scope.submit = function () {
                     debugger;
                     
@@ -22,7 +54,13 @@ angular
                         scope.newArticleForm.categories = [];
                         scope.newArticleForm.categories.push(category);
                         scope.newArticleForm.usersId=17;
-                        articleRestService.saveArticle( scope.newArticleForm, scope.success, scope.error)
+                        if(scope.editing){
+                            articleRestService.editArticle(scope.editingArticleId, scope.newArticleForm, scope.success, scope.error)
+                        }
+                        else{
+                            articleRestService.saveArticle( scope.newArticleForm, scope.success, scope.error)
+                        }
+                     
                  
 
                 }
