@@ -13,6 +13,7 @@ angular
                 $scope.user;
                 $scope.articles;
                 $scope.initialized = false;
+                $scope.articleToRemoveTitle;
                 var scope = $scope;
                 $scope.init = function () {
                     scope.getUserInfo();
@@ -38,8 +39,26 @@ angular
                     $location.path('article/new')
                 }
 
+                $scope.edit = function(id){
+                    $location.path('article/editing/'+id);
+                } 
+                
+                $scope.remove = function(id, title){
+                 //   debugger;
+                 scope.articleToRemoveTitle = title;
+                        $(".modal").addClass("is-active");  
+                   
+              
+                } 
                 $scope.init();
-
+     
+                      $(".modal-close").click(function() {
+                         $(".modal").removeClass("is-active");
+                      });
+                      
+                      $("#closebtn").click(function() {
+                         $(".modal").removeClass("is-active");
+                      });                 
 
             }
         };

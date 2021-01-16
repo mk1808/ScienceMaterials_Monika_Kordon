@@ -21,6 +21,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         .when('/article/editing/:id',{
           template: '<add-article-directive></add-article-directive>'
         })
+        .when('/article/editing/parts/:id',{
+          template: '<add-article-parts-directive></add-article-parts-directive>'
+        })
         .when('/article/:id',{
           template: '<single-article-directive></single-article-directive>'
         })

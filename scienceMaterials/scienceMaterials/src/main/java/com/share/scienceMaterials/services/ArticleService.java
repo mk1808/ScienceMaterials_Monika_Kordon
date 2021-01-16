@@ -180,6 +180,43 @@ private UserService userService;
 		
 	}
 	
+	public List<Long> getPartsIDsByArticle(Long articleId){
+		List<Part> parts= partRepository.findByArticleOrderByOrderNo(getArticleById(articleId));
+		List<Long> partsIds = new ArrayList<>();
+		for (Part part:parts) {
+			partsIds.add(part.getId());
+		}
+		return partsIds;
+	}
+	
+	public Long deletePart(Long partId) {
+		partRepository.deleteById(partId);
+		return partId;
+	}
+	
+	public Long deletePartsFromArticle(Long articleId) {
+		
+		List<Long> partsIdsToDelete = getPartsIDsByArticle(articleId);
+		for(Long partId:partsIdsToDelete) {
+			partRepository.deleteById(partId);
+		}
+		
+		return articleId;
+	}
+	
+	public Long editPartsFromArticle(Long articleId, List<PartDto> parts) {
+		deletePartsFromArticle(articleId);
+		createParts(parts);
+		
+		return articleId;
+	}
+	
+	public Long deleteArticle (Long articleId) {
+		deletePartsFromArticle(articleId);
+		articleRepository.deleteById(articleId);
+		return articleId;
+	}
+	
 /*	public Set<Article> getArticlesByTitlePartAndCategory2(String title, Set<ArticleCategory> categories) {
 
 		Set<Article> articles = articleRepository.getArticlesByTitlePartAndCategories(title, new ArrayList<>(categories));

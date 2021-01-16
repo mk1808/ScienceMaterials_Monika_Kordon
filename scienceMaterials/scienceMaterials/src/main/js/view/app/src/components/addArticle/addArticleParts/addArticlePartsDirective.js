@@ -28,7 +28,28 @@ angular
                 $scope.i=0;
                 $scope.form;
                 $scope.formfield;
-             
+                $scope.editing=false;
+                $scope.successParts = function(response){
+                    debugger;
+                    console.log(response) 
+                    
+                    for (let singlePart of response.data){
+                        singlePart.type = dataShareService.partTypeToPol(singlePart.type);
+                    }
+                    scope.parts = response.data;
+                    scope.initialized = true;
+                    
+                }
+                $scope.errorParts = function(response){
+                   console.log(response)
+                }
+                $scope.initEdit = function(){
+                    scope.editing = $location.absUrl().includes("editing");
+                    if(scope.editing){
+                        articleRestService.getPartsByArticleId(scope.articleId,  scope.successParts,  scope.errorParts )
+                    }
+                }
+                $scope.initEdit();
                 $scope.up=function(id){
                     if(id!=0){
                     let prev = scope.parts[id-1];

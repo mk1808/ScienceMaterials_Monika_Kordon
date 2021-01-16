@@ -21,7 +21,7 @@ angular
                     debugger;
                   
                     scope.editingArticle = response.data;
-                    scope.title=`Edycja artykułu ${scope.editingArticle.id}`;
+                    scope.title=`Edycja artykułu ${scope.editingArticle.title}`;
                     console.log(response.data);
                     
                     scope.newArticleForm.title=scope.editingArticle.title;
@@ -66,7 +66,12 @@ angular
                 }
                 $scope.success=function(response){
                     scope.createdArticleId = response.data.id;
-                    $location.path(`article/new/parts/${scope.createdArticleId}`);
+                    if(scope.editing){
+                        $location.path(`article/editing/parts/${scope.createdArticleId}`);
+                    }else {
+                        $location.path(`article/new/parts/${scope.createdArticleId}`);
+                    
+                    }
                     console.log(response)
                 }
                 $scope.error=function(){

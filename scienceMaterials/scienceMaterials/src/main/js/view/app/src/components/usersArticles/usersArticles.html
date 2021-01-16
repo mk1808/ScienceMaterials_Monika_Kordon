@@ -24,8 +24,8 @@ ARTICLES USERR
           <td>23</td>
           <td>{{article.creationDate| date:'dd-MM-yyyy'}}</td>
           <td>3</td>
-          <td><i ng-click="edit(article.id)" class="fas fa-edit"></i></td>
-          <td><i ng-click="remove(article.id)"class="far fa-trash-alt"></i></td>
+          <td  ng-click="edit(article.id)"><i class="fas fa-edit"></i></td>
+          <td  ng-click="remove(article.id, article.title)"><i class="far fa-trash-alt"></i></td>
         </tr>
       </tbody>
     </table>
@@ -34,4 +34,27 @@ ARTICLES USERR
   </div>
   <button class="button is-primary" ng-click="addArticle()">Dodaj nowy artykuł</button>
   </div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Usuwanie artykułu</strong> 
+              <br>
+              Czy na pewno chcesz usunąć artykuł {{articleToRemoveTitle}}?
+            </p>
+          </div>
+          <button class="button is-info is-small" id="next">Next</button>
+          <button class="button is-info is-small" id="previous">Previous</button>
+          <button class="button is-danger is-small" id="closebtn">Close Modal</button>
+        </div>
+      </article>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
 </div>
