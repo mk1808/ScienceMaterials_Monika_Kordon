@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,10 +22,12 @@ import com.share.scienceMaterials.services.UserService;
 @RequestMapping("/api/users")
 public class UserController {
 	private UserService userService;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Autowired
-	public UserController(UserService userService) {
+	public UserController(UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.userService=userService;
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
 	
 	@GetMapping("/{mail}")
@@ -36,11 +39,11 @@ public class UserController {
 	
 	@PostMapping
 	public ResponseEntity<AppUser> createUser(@RequestBody AppUser user) {
-		userService.createUser(user);
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		return new ResponseEntity<>(userService.createUser(user),HttpStatus.OK);
 	}
 	
-	@PostMapping("/verify")
+	@PostMapping("/login")
 	public ResponseEntity<AppUser> loginUser(@RequestBody AppUser user) {
 	
 		return new ResponseEntity<>(userService.loginUser(user),HttpStatus.OK);
