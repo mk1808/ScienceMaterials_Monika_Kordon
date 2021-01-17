@@ -11,13 +11,14 @@ angular
                 $scope.token;
                 $scope.logged = false;
                 $scope.init=function(){
-                    debugger;
+                  //  debugger;
                     scope.token = localStorage.getItem("token");
                     if(scope.token){
                         scope.logged = true;
 
                     }
                 }
+                $scope.init();
                 
             }
         };

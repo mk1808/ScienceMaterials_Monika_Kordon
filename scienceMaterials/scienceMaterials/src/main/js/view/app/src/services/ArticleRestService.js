@@ -96,6 +96,18 @@ angular
                 'Authorization': token }
             }).then(successCallback, errorCallback);
         }
+            
+            
+           this.deleteArticle = function (id, successCallback, errorCallback) {
+            let token = localStorage.getItem("token");
+            $http({
+                method: 'DELETE',
+                url: 'api/articles/'+id,
+                headers: { 'Content-Type': 'application/json',
+                'Authorization': token }
+            }).then(successCallback, errorCallback);
+        }
+        
        // http://localhost:8080/api/articles/parts
     }])
 

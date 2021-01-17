@@ -29,6 +29,10 @@ import com.share.scienceMaterials.repositiories.ArticleRepository;
 import com.share.scienceMaterials.services.ArticleService;
 import com.share.scienceMaterials.services.FileService;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @RestController
 @RequestMapping("/api/articles")
@@ -130,7 +134,17 @@ public class ArticleController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Long> deleteArticle(@PathVariable Long id) {
-		return new ResponseEntity<>(articleService.deleteArticle(id), HttpStatus.OK);
+	public ResponseEntity<Deleted> deleteArticle(@PathVariable Long id) {
+		Long deletedId = articleService.deleteArticle(id);
+		Deleted deleted = new Deleted(deletedId);
+		String message = "{ \"deletedId\":\"" +deletedId.toString()+ "\"}";
+		return new ResponseEntity<>(deleted, HttpStatus.OK);
+	}
+	
+	@AllArgsConstructor
+	@NoArgsConstructor
+	@Data
+	private class Deleted {
+		private Long id;
 	}
 }

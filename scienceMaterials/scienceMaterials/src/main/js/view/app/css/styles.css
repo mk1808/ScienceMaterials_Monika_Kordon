@@ -220,6 +220,10 @@
       font-size: 36px;
       color: #aaaaaa; }
 
+.modal-content .dialogButtons {
+  display: flex;
+  justify-content: space-between; }
+
 .gu-mirror {
   position: fixed !important;
   margin: 0 !important;

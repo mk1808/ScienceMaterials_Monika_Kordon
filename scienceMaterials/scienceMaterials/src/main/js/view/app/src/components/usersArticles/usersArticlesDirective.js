@@ -2,7 +2,8 @@
 
 angular
     .module('materialsApp')
-    .directive('usersArticlesDirective', ['DataShareService', 'UserRestService', '$location', function (dataShareService, userRestService, $location) {
+    .directive('usersArticlesDirective', ['DataShareService', 'UserRestService', 'ArticleRestService', '$location',
+     function (dataShareService, userRestService, articleRestService, $location) {
 
 
         return {
@@ -13,6 +14,7 @@ angular
                 $scope.user;
                 $scope.articles;
                 $scope.initialized = false;
+                $scope.articleToRemoveId;
                 $scope.articleToRemoveTitle;
                 var scope = $scope;
                 $scope.init = function () {
@@ -47,20 +49,35 @@ angular
                 $scope.remove = function(id, title){
                  //   debugger;
                  scope.articleToRemoveTitle = title;
+                 scope.articleToRemoveId = id;
                         $(".modal").addClass("is-active");  
                    
-              
                 } 
+                $scope.closeDialog = function(){
+                    $(".modal").removeClass("is-active");
+                }
+                $scope.successDelete = function (response) {
+                    console.log(response);
+                    $(".modal").removeClass("is-active");
+                    scope.init();
+                   
+                }
+                $scope.errorDelete = function () {
+                    console.log(response)
+                }
+                $scope.confirmDelete = function(){
+                    articleRestService.deleteArticle(scope.articleToRemoveId, scope.successDelete, scope.errorDelete)
+                }
                 $scope.init();
-     
-                      $(".modal-close").click(function() {
+               
+                   /*   $(".modal-close").click(function() {
                          $(".modal").removeClass("is-active");
                       });
                       
                       $("#closebtn").click(function() {
                          $(".modal").removeClass("is-active");
                       });                 
-
+*/
             }
         };
     }]);

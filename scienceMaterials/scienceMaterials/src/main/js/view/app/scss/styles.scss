@@ -338,6 +338,13 @@
      }
  }
  }
+.modal-content{
+    .dialogButtons{
+         display: flex; 
+    justify-content: space-between;
+    }
+}
+
 
 .gu-mirror {
     position: fixed !important;

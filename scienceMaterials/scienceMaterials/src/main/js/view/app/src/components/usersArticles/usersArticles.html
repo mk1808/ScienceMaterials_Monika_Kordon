@@ -46,15 +46,18 @@ ARTICLES USERR
             <p>
               <strong>Usuwanie artykułu</strong> 
               <br>
-              Czy na pewno chcesz usunąć artykuł {{articleToRemoveTitle}}?
+              <div>    Czy na pewno chcesz usunąć artykuł {{articleToRemoveTitle}}?
+              </div>
             </p>
           </div>
-          <button class="button is-info is-small" id="next">Next</button>
-          <button class="button is-info is-small" id="previous">Previous</button>
-          <button class="button is-danger is-small" id="closebtn">Close Modal</button>
+          <div class="dialogButtons">
+            <button class="button is-info" ng-click="closeDialog()" id="next">Anuluj</button>
+            <button class="button is-danger " ng-click="confirmDelete()" id="closebtn">Usuń</button>
+         
+          </div>
         </div>
       </article>
     </div>
   </div>
-  <button class="modal-close is-large" aria-label="close"></button>
+  <button class="modal-close is-large" ng-click="closeDialog()" aria-label="close"></button>
 </div>

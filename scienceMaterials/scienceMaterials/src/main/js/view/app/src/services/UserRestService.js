@@ -32,7 +32,7 @@ angular
                }).then(successCallback, errorCallback);
          }
         this.getArticlesforUser = function(id, successCallback, errorCallback){
-           debugger;
+         //  debugger;
             let token = localStorage.getItem("token");
             console.log("service")
             $http({
