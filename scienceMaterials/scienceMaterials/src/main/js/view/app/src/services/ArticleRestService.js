@@ -1,7 +1,7 @@
 angular
     .module('materialsApp')
     .service('ArticleRestService',['$http', 'DataShareService',  function ($http, dataShareService) {
-        this.getArticles = function(successCallback, errorCallback){
+        this.getArticles = function(successCallback, errorCallback){      
             console.log("service")
             $http({
                 method: 'GET',
@@ -42,25 +42,28 @@ angular
               }).then(successCallback, errorCallback);
         }
         this.saveArticle = function (article, successCallback, errorCallback) {
-            
+            let token = localStorage.getItem("token");
             $http({
                 method: 'POST',
                 url: 'api/articles',
                 data: article,
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json',
+                'Authorization': token }
             }).then(successCallback, errorCallback);
         }
         this.saveArticleParts = function (parts, successCallback, errorCallback) {
-            
+            let token = localStorage.getItem("token");
             $http({
                 method: 'POST',
                 url: 'api/articles/parts',
                 data: parts,
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json',
+                'Authorization': token  }
             }).then(successCallback, errorCallback);
         }
         this.saveFiles = function(files, successCallback, errorCallback){
            debugger;
+           let token = localStorage.getItem("token");
             let formData=new FormData();
          
             for(let file of files){
@@ -70,7 +73,8 @@ angular
             $http.post('api/articles/files', formData, 
             
             {
-                headers: { 'Content-Type': undefined },
+                headers: { 'Content-Type': undefined ,
+                'Authorization': token },
                 transformRequest: angular.identity
             }).then(successCallback, errorCallback);
         }
@@ -83,12 +87,13 @@ angular
            }
 
            this.editArticle = function (id, article, successCallback, errorCallback) {
-            
+            let token = localStorage.getItem("token");
             $http({
                 method: 'PUT',
                 url: 'api/articles/'+id,
                 data: article,
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json',
+                'Authorization': token }
             }).then(successCallback, errorCallback);
         }
        // http://localhost:8080/api/articles/parts

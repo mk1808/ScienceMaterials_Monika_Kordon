@@ -9,9 +9,10 @@ angular
             link: function ($scope, element, attrs) {
                 //  debugger;
                 var scope = $scope;
-                $scope.loginForm = { mail: "", password: "" };
+                $scope.loginForm = { mail: "userR1@gmail.com", password: "Pasword" };
                 $scope.loginStatus;
                 $scope.loggedUser;
+                $scope.token;
                 $scope.submit = function () {
                         let user = scope.loginForm;
                         userRestService.login(user, scope.successLogin, scope.errorLogin)
@@ -22,22 +23,39 @@ angular
                     scope.loginForm.password = "";
                     scope.loginStatus=null;
                 }
-                $scope.successLogin = function(response){
+                $scope.successLogin = function(response, status, headers, config){
                     debugger;
-                    localStorage.setItem('userId', response.data.id);
-                    console.log($location.absUrl())
-                    $location.path("user");
-                    scope.registerStatus = true;
-                    scope.clear();
                     console.log(response);
-                    dataShareService.setLoggedUser(response.data);
-                    console.log("success");
+                    console.log(headers);
+                    scope.token = response.headers().authorization;
+                    localStorage.setItem('token', scope.token);
+                    localStorage.setItem('token2',scope.token.split("Bearer "));
+                    userRestService.getUserByMail(scope.loginForm.mail, scope.successGetUser, scope.errorGetUser);
+                   // console.log(headers('authorization'));
+                    
 
 
                 }
                 $scope.errorLogin = function(){
                     scope.loginStatus=false;
                     console.log("err");
+                }
+
+                $scope.successGetUser = function(response){
+                    debugger;
+                    localStorage.setItem('userId', response.data.id);
+
+                    console.log($location.absUrl())
+                    $location.path("user");
+                    scope.registerStatus = true;
+                    scope.clear();
+           
+                //    dataShareService.setLoggedUser(response.data);
+                  //  console.log("success");
+                }
+
+                $scope.errorGetUser = function(){
+                
                 }
 
                 

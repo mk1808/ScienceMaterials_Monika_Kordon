@@ -21,10 +21,11 @@ angular
                     console.log(scope.articles)
                 }
                 $scope.getUserInfo = function () {
-                    scope.user = dataShareService.getLoggedUser();
+                    //scope.user = dataShareService.getLoggedUser();
+                    scope.user = localStorage.getItem("userId");
                 }
                 $scope.getArticlesForUser = function () {
-                    userRestService.getArticlesforUser(17, scope.success, scope.error)//scope.user.id, scope.success, scope.error)
+                    userRestService.getArticlesforUser(scope.user, scope.success, scope.error)//scope.user.id, scope.success, scope.error)
                 }
                 $scope.success = function (response) {
                     console.log(response)

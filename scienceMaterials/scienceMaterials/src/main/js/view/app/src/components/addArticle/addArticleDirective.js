@@ -10,6 +10,7 @@ angular
                 //debugger;
                 var scope = $scope;
                 var createdArticleId;
+                $scope.userId;
                 $scope.editing=false;
                 $scope.editingArticleId;
                 $scope.title="Tworzenie nowego artykułu";
@@ -33,6 +34,7 @@ angular
                 }
                 $scope.init=function(){
                   //  debugger;
+                  scope.userId = localStorage.getItem("userId");
                     if($routeParams.id){
                     scope.editing=true;
                     
@@ -53,7 +55,7 @@ angular
                         let category = article.categories;
                         scope.newArticleForm.categories = [];
                         scope.newArticleForm.categories.push(category);
-                        scope.newArticleForm.usersId=17;
+                        scope.newArticleForm.usersId=scope.userId;
                         if(scope.editing){
                             articleRestService.editArticle(scope.editingArticleId, scope.newArticleForm, scope.success, scope.error)
                         }

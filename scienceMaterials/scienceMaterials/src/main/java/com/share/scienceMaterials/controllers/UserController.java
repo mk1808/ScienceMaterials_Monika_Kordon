@@ -32,8 +32,8 @@ public class UserController {
 	
 	@GetMapping("/{mail}")
 	public ResponseEntity<AppUser> getUserByMail(@PathVariable String mail) {
-		
-		return new ResponseEntity<>(userService.getUserByMail(mail),HttpStatus.OK);
+		AppUser user = userService.getUserByMail(mail);
+		return new ResponseEntity<>(user,HttpStatus.OK);
 	}
 	
 	

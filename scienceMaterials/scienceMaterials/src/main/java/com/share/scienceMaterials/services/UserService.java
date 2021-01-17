@@ -28,7 +28,9 @@ public class UserService implements UserDetailsService  {
 	}
 	
 	public AppUser getUserByMail(String mail) {
-		return userRepository.findUserByMail(mail);
+		AppUser user = userRepository.findUserByMail(mail);
+		user.setPassword("");
+		return user;
 	}
 	public AppUser getUserById(Long id) {
 		return userRepository.findById(id).orElse(null);

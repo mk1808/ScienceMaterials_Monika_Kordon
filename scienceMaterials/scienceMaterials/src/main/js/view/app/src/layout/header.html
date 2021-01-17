@@ -49,7 +49,16 @@
           <a href = "#!/contact" class="navbar-item">
             Kontakt
           </a>
-          <div class="buttons">
+          <a  ng-if="logged" href = "#!/user" class="navbar-item">
+            Panel użytkownika
+          </a>
+          <div ng-if="logged" class="buttons">
+            <a class="button is-primary" >
+              <strong>Wyloguj</strong>
+            </a>
+           
+          </div>
+          <div ng-if="!logged" class="buttons">
             <a class="button is-primary"  href = "#!/register">
               <strong>Załóż konto</strong>
             </a>
