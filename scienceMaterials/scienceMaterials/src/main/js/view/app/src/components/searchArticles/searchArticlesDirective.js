@@ -14,6 +14,7 @@ angular
                   {display:"Biologia",value:"BIOLOGY"},
                   {display:"Informatyka",value:"IT"},
                   {display:"Chemia",value:"CHEMISTRY"},
+                  {display:"Geografia",value:"GEOGRAPHY"},
                   {display:"Fizyka",value:"PHYSICS"}];
                   $scope.articles;
                   $scope.initialized = false;;

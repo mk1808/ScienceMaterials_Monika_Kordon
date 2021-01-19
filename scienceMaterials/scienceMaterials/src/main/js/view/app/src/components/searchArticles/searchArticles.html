@@ -11,9 +11,16 @@
         <div>   
             <button class="button is-primary" ng-click="search()">Szukaj</button></div>
     </div>
-    <div class="gridContainer">
-        <div ng-if="initialized && articles.length>0" ng-repeat="article in articles">
+    <div class="gridContainer" ng-if="initialized && articles.length>0">
+        <div  ng-repeat="article in articles">
             <card-directive card-content="article"></card-directive>
-        </div>
+        </div> 
     </div>
+    <div class="register">
+  <div class="result searchResult" ng-if="articles.length<=0">
+        <h2>Nie znaleziono artykułów z spełniających kryteria. Spróbuj ponownie!</h2>
+    </div>
+
+    </div>
+  
 </div>

@@ -86,6 +86,7 @@ angular
                     {display:"Biologia",value:"BIOLOGY"},
                     {display:"Informatyka",value:"IT"},
                     {display:"Chemia",value:"CHEMISTRY"},
+                    {display:"Geografia",value:"GEOGRAPHY"},
                     {display:"Fizyka",value:"PHYSICS"}];
                  
                 articleRestService.getArticles(1, $scope.success, $scope.error);

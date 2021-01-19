@@ -169,6 +169,14 @@
   border: 1px dashed black;
   padding: 10px;
   border-radius: 30px; }
+  .register .result.searchResult {
+    margin-top: 60px;
+    border: 2px dashed black;
+    padding: 24px;
+    border-radius: 30px;
+    margin: 60px 300px;
+    font-size: 33px;
+    text-align: center; }
 
 .userArticles .header {
   margin-bottom: 30px; }

@@ -16,6 +16,7 @@ angular
                 case "Biologia": return "BIOLOGY";
                 case  "Informatyka": return "IT";
                 case "Chemia": return "CHEMISTRY";
+                case "Geografia": return "GEOGRAPHY";
                 case "Fizyka":return "PHYSICS"
             }
         }
@@ -52,6 +53,7 @@ angular
                 case "BIOLOGY": return "Biologia"
                 case "IT": return  "Informatyka";
                 case "CHEMISTRY": return "Chemia";
+                case "GEOGRAPHY": return "Geografia";
                 case "PHYSICS":return "Fizyka"
             }
         }
