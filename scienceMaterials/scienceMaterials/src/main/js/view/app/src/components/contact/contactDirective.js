@@ -2,41 +2,37 @@
 
 angular
     .module('materialsApp')
-    .directive('contactDirective',['UserRestService', 'DataShareService', '$location', function (userRestService, dataShareService, $location) {
+    .directive('contactDirective',['MessageRestService', 'DataShareService', '$location', function (messageRestService, dataShareService, $location) {
         return {
             restrict: 'E',
             templateUrl: '/src/components/contact/contact.html',
             link: function ($scope, element, attrs) {
                 //  debugger;
                 var scope = $scope;
-                $scope.contactForm = { mail: "", name: "", text:"" };
+                $scope.sent = false;
+                $scope.contactForm = { mail: "", name: "", message:"" };
                 $scope.loginStatus;
                 $scope.loggedUser;
                 $scope.submit = function () {
-                        let user = scope.loginForm;
-                        userRestService.login(user, scope.successLogin, scope.errorLogin)
+                  
+                        messageRestService.saveMessage(scope.contactForm, scope.success, scope.error)
                     }
   
                 $scope.clear = function () {
-                    scope.loginForm.mail = "";
-                    scope.loginForm.password = "";
-                    scope.loginStatus=null;
+                    scope.contactForm.mail = "";
+                    scope.contactForm.name = "";
+                    scope.contactForm.message="";
                 }
-                $scope.successLogin = function(response){
-                    debugger;
-                    localStorage.setItem('userId', response.data.id);
-                    console.log($location.absUrl())
-                    $location.path("user");
-                    scope.registerStatus = true;
+                $scope.success = function(response){
+                   scope.sent=true;
                     scope.clear();
                     console.log(response);
-                    dataShareService.setLoggedUser(response.data);
-                    console.log("success");
+                
 
 
                 }
-                $scope.errorLogin = function(){
-                    scope.loginStatus=false;
+                $scope.error = function(){
+                
                     console.log("err");
                 }
 

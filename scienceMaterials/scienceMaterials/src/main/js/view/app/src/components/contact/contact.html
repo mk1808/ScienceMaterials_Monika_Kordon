@@ -6,15 +6,15 @@
         <input-directive display-name="Mail" control-name="contactForm.mail"></input-directive>
         <input-directive display-name="Imię" control-name="contactForm.name"></input-directive>
         
-        <textarea-directive display-name="Twoja wiadomość" control-name="contactForm.text">
+        <textarea-directive display-name="Twoja wiadomość" control-name="contactForm.message">
         </textarea-directive>
         <div class="buttons">
             <button class="button" ng-click="clear()">Wyczyść</button>
             <div></div>
             <button class="button is-primary" ng-click="submit()">Wyślij</button>
         </div>
-        <div class="result" ng-if="loginStatus===false">
-            <h2>Logowanie nie powiodło się, spróbuj ponownie.</h2>
+        <div class="result" ng-if="sent===true">
+            <h2>Twoja wiadomość została wysłana</h2>
         </div>
     </div>
 </div>
