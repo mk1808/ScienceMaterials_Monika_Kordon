@@ -11,19 +11,21 @@ angular
                 controlName: '='
             },
             link: function ($scope, element, attrs) {
-
-                console.log($scope)
-
-                const fileInput = document.querySelector('#fileInput input[type=file]');
-                fileInput.onchange = () => {
-                    debugger;
-                    $scope.controlName.file = fileInput.files;
-                    if (fileInput.files.length > 0) {
-
-                        const fileName = document.querySelector('#fileInput .file-name');
-                        fileName.textContent = fileInput.files[0].name;
+                var scope = $scope;
+                $scope.filename=""
+                $scope.selectFile = function (event) {
+                    debugger
+                    var files = event.target.files;
+                    $scope.controlName.file = files
+                    if (files.length > 0) {
+                        scope.filename = files[0].name;
+                    } else {
+                        scope.filename = "restauracja Habadzibadło";
                     }
-                }
+                    $scope.$apply();
+                };
+
+
             }
         };
     });
