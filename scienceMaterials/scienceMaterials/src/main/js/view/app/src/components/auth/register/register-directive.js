@@ -14,7 +14,7 @@ angular
                     debugger;
                     if (scope.registerForm.password==scope.registerForm.passwordRepeat){
                         console.log(scope.registerForm);
-                        let user = {mail:scope.registerForm.mail, password:scope.registerForm.password};
+                        let user = {mail:scope.registerForm.mail, password:scope.registerForm.password, login:scope.registerForm.mail.split('@')[0]};
                         userRestService.register(user, $scope.successRegister, $scope.errorRegister)
                     }
                     scope.a = 1;

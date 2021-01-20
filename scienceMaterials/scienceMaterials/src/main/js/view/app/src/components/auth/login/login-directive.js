@@ -32,6 +32,7 @@ angular
                     localStorage.setItem('token2',scope.token.split("Bearer "));
                     userRestService.getUserByMail(scope.loginForm.mail, scope.successGetUser, scope.errorGetUser);
                    // console.log(headers('authorization'));
+                    scope.$emit("userLogin");
                     
 
 
@@ -44,6 +45,7 @@ angular
                 $scope.successGetUser = function(response){
                     debugger;
                     localStorage.setItem('userId', response.data.id);
+                    localStorage.setItem('mail', response.data.mail);
 
                     console.log($location.absUrl())
                     $location.path("user");

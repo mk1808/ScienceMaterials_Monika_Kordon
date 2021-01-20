@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        <img src="assets/logo.png" >
       </a>
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -50,12 +50,26 @@
             Kontakt
           </a>
           <a  ng-if="logged" href = "#!/user" class="navbar-item">
-            Panel użytkownika
+            Moje artykuły
           </a>
           <div ng-if="logged" class="buttons">
-            <a class="button is-primary" >
+
+         
+        <div class="navbar-item has-dropdown is-hoverable is-right">
+          <a class="navbar-link is-right">
+            {{mail}}
+          </a>
+  
+          <div class="navbar-dropdown" style="text-align: center;">
+         
+            <a class="button is-primary" ng-click = "logout()">
               <strong>Wyloguj</strong>
             </a>
+          </div>
+        </div>
+
+
+            
            
           </div>
           <div ng-if="!logged" class="buttons">
