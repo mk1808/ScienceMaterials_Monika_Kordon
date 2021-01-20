@@ -38,7 +38,7 @@
     margin: 40px 20px;
 
     .card-content {
-        min-height: 195px;
+        height: 235px;
     }
 }
 
@@ -112,6 +112,8 @@
             img {
                 margin-top: 20px;
                 margin-bottom: 10px;
+                width: 100%;
+                max-width: 400px;
             }
         }
 
@@ -169,18 +171,26 @@
 
     }
 }
-
+.pageContent{
+    padding-top:50px;
+    background: rgb(255,255,255);
+background: linear-gradient(36deg, rgba(255,255,255,1) 72%, rgba(0,209,178,1) 100%);
+}
 .addArticle {
     text-align: center;
-    margin-top: 50px;
-
+   
+.addArticleParts{
+    width: 1200px!important;
+}
     .formContent {
         width: 1000px;
         margin-left: auto;
         margin-right: auto;
-        border: 1px solid black;
+        border: 3px solid black;
         min-height: 1000px;
         padding: 50px 200px;
+        background-color: white;
+    border-radius: 9px;
 
         .singleInput {
             width: 320px;
@@ -280,9 +290,10 @@
 
 
 .searchBar {
-    display: grid;
-    grid-template-columns: 30% 20% 20% 30%;
+    display: flex;
+    /* grid-template-columns: 30% 20% 20% 30%; */
     grid-column-gap: 50px;
+    justify-content: center;
 
     .button {
         margin-top: 32px;
@@ -291,7 +302,7 @@
 
 .creationPart {
     display: grid;
-    grid-template-columns: 30% 63%;
+    grid-template-columns: 290px 752px;
     grid-column-gap: 50px;
     margin-bottom:30px;
 
@@ -318,6 +329,10 @@
     .sandbox {
      cursor: pointer;
 
+    border: 2px dashed #7b7979;
+    min-height: 1200px;
+    padding: 20px;
+
      .item {
          padding: 20px;
          margin: 5px;
@@ -338,12 +353,10 @@
          }
      }
 
-     border: 1px solid black;
-     min-height: 1200px;
-     padding: 20px;
+    
 
      p {
-         font-size: 36px;
+         font-size: 28px;
          color: #aaaaaa;
      }
  }

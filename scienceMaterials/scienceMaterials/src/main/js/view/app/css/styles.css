@@ -28,7 +28,7 @@
 .cardFromGrid .card {
   margin: 40px 20px; }
   .cardFromGrid .card .card-content {
-    min-height: 195px; }
+    height: 235px; }
 
 .singleArticle .card .card-image img {
   height: 200px; }
@@ -82,7 +82,9 @@
     font-weight: 600; }
     .singleArticle .card .articleContent .articlePicture img {
       margin-top: 20px;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 400px; }
   .singleArticle .card .articleContent .articleLink {
     min-height: 175px;
     width: 500px;
@@ -117,16 +119,24 @@
   .singleArticle .card .articleContent .media .title {
     margin-bottom: 8px; }
 
+.pageContent {
+  padding-top: 50px;
+  background: white;
+  background: linear-gradient(36deg, white 72%, #00d1b2 100%); }
+
 .addArticle {
-  text-align: center;
-  margin-top: 50px; }
+  text-align: center; }
+  .addArticle .addArticleParts {
+    width: 1200px !important; }
   .addArticle .formContent {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
+    border: 3px solid black;
     min-height: 1000px;
-    padding: 50px 200px; }
+    padding: 50px 200px;
+    background-color: white;
+    border-radius: 9px; }
     .addArticle .formContent .singleInput {
       width: 320px;
       margin-left: auto;
@@ -184,15 +194,16 @@
     margin-top: 30px; }
 
 .searchBar {
-  display: grid;
-  grid-template-columns: 30% 20% 20% 30%;
-  grid-column-gap: 50px; }
+  display: flex;
+  /* grid-template-columns: 30% 20% 20% 30%; */
+  grid-column-gap: 50px;
+  justify-content: center; }
   .searchBar .button {
     margin-top: 32px; }
 
 .creationPart {
   display: grid;
-  grid-template-columns: 30% 63%;
+  grid-template-columns: 290px 752px;
   grid-column-gap: 50px;
   margin-bottom: 30px; }
   .creationPart .source {
@@ -208,7 +219,7 @@
     cursor: pointer; }
   .creationPart .sandbox {
     cursor: pointer;
-    border: 1px solid black;
+    border: 2px dashed #7b7979;
     min-height: 1200px;
     padding: 20px; }
     .creationPart .sandbox .item {
@@ -225,7 +236,7 @@
           letter-spacing: 2px;
           margin-right: 10px; }
     .creationPart .sandbox p {
-      font-size: 36px;
+      font-size: 28px;
       color: #aaaaaa; }
 
 .modal-content .dialogButtons {
