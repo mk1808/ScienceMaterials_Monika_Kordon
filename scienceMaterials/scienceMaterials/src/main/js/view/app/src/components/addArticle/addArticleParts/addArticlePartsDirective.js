@@ -14,7 +14,7 @@ angular
                 $scope.savedFilesPaths = [];
                 $scope.elements = [
                     {type:'Tekst', id:1, data:{content:""}}, 
-                    {type:'Obraz', id:2, data:{source:"", description:""}},
+                    {type:'Obraz', id:2, data:{source:{}, description:""}},
                     {type:'Plik', id:3, data:{source:{}, description:"", name:""}},
                     {type:'Link', id:4, data:{source:"", description:"", text:""}},
                     {type:'Nagłówek', id:5, data:{size:"", text:"", options:[
@@ -32,11 +32,13 @@ angular
                 $scope.successParts = function(response){
                     debugger;
                     console.log(response) 
-                    
+                    let newParts = []
                     for (let singlePart of response.data){
-                        singlePart.type = dataShareService.partTypeToPol(singlePart.type);
+                        const type = dataShareService.partTypeToPol(singlePart.type);
+                        const part = {type:type, data:singlePart}
+                        newParts.push(part)
                     }
-                    scope.parts = response.data;
+                    scope.parts = newParts;
                     scope.initialized = true;
                     
                 }
@@ -91,20 +93,7 @@ angular
                     console.log(scope.elements.length)
                     console.log(scope.parts.length)
                     console.log(scope.parts);
-                    switch(el[0].innerHTML){
-                        case 'Tekst':{}
-                        break;
-                        case 'Punktor':{}
-                        break;
-                        case 'Nagłówek':{}
-                        break;
-                        case 'Obraz':{}
-                        break;
-                        case 'Link':{}
-                        break;
-                        case 'Plik':{}
-                        break;
-                    }
+                 
                 })
          /*       $scope.$on('bag-one.drop-model', function (e, el, target, source, sibling) {
                     // el.addClass('over');
@@ -119,7 +108,7 @@ angular
 
                 }
                 $scope.submit = function () {
-                    let files = scope.parts.filter(part=>part.type==="Plik");
+                    let files = scope.parts.filter(part=>(part.type==="Plik"||part.type==="Obraz"));
                     articleRestService.saveFiles(files, scope.saveFilesSuccess, scope.saveFilesError);
                     debugger;
                    
@@ -148,13 +137,25 @@ angular
                         //  newPart.type = part.type;
                         
                         newPart.type = dataShareService.partTypeToEng(part.type);
+
                         if(newPart.type==='f'){
-                            newPart.extension=newPart.source.file[0].name.split(".")[1];
-                            newPart.source = scope.savedFilesPaths[filesInPartsIndex];
+                            let isString = typeof newPart.source === 'string' || newPart.source instanceof String;
+                            newPart.extension=(isString?newPart.source : newPart.source.file[0].name).split(".")[1];
+                            newPart.source = scope.savedFilesPaths[filesInPartsIndex] || newPart.source;
                             filesInPartsIndex++;
                             fileOrderNo++;
                           
-                            newPart.fileOrderNo = filesInPartsIndex;
+                            newPart.fileOrderNo = fileOrderNo;
+                        }
+                        if(newPart.type==="pi"){
+                
+                            newPart.source = scope.savedFilesPaths[filesInPartsIndex] || newPart.source;
+                            filesInPartsIndex++;
+                            pictureOrderNo++;
+                          
+                            newPart.fileOrderNo = pictureOrderNo;
+                    
+              
                         }
                         newPart.articleId = scope.articleId;
                         newPart.orderNo = i;

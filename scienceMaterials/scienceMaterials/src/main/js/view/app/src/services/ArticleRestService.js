@@ -65,18 +65,26 @@ angular
            debugger;
            let token = localStorage.getItem("token");
             let formData=new FormData();
-         
+         let areFilesAvailable=false;
             for(let file of files){
-                 formData.append("files", file.data.source.file[0]);  
+                if(file.data.source.file&& file.data.source.file.length!==undefined){
+                     formData.append("files", file.data.source.file[0]);  
+                 areFilesAvailable = true;
+                }
+                
             }
-            
-            $http.post('api/articles/files', formData, 
+            if(areFilesAvailable){
+                $http.post('api/articles/files', formData, 
             
             {
                 headers: { 'Content-Type': undefined ,
                 'Authorization': token },
                 transformRequest: angular.identity
             }).then(successCallback, errorCallback);
+            }else{
+                successCallback({data:[]})
+            }
+            
         }
         this.getFile = function(fileName, successCallback, errorCallback){
             //   let engCategories = dataShareService.toEngCategory(categories);
