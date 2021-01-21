@@ -26,9 +26,23 @@
   grid-template-columns: 33% 33% 33%; }
 
 .cardFromGrid .card {
-  margin: 40px 20px; }
+  margin: 0px 20px 50px 20px; }
   .cardFromGrid .card .card-content {
-    height: 235px; }
+    height: 250px; }
+    .cardFromGrid .card .card-content .content .summary {
+      min-height: 73px; }
+    .cardFromGrid .card .card-content .content time {
+      display: inline-flex; }
+      .cardFromGrid .card .card-content .content time div {
+        margin-left: 10px; }
+      .cardFromGrid .card .card-content .content time .icon {
+        font-size: 20px; }
+  .cardFromGrid .card .buttonContainer {
+    text-align: center; }
+    .cardFromGrid .card .buttonContainer button {
+      width: 200px;
+      margin-top: 10px;
+      margin-bottom: 10px; }
 
 .singleArticle .card .card-image img {
   height: 200px; }
@@ -166,13 +180,20 @@
   .addArticle .addPartsContent {
     padding: 50px 40px; }
 
+.searching .header {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 47px; }
+
 .register .header {
-  margin-bottom: 30px; }
+  margin-bottom: 55px;
+  font-size: 25px; }
 
 .register .buttons {
   display: grid;
   grid-template-columns: 120px 85px 120px !important;
-  justify-content: space-evenly !important; }
+  justify-content: space-evenly !important;
+  margin-top: 50px; }
 
 .register .result {
   margin-top: 20px;
@@ -199,7 +220,8 @@
   grid-column-gap: 50px;
   justify-content: center; }
   .searchBar .button {
-    margin-top: 32px; }
+    margin-top: 32px;
+    margin-bottom: 50px; }
 
 .creationPart {
   display: grid;
