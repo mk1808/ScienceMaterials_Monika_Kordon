@@ -16,6 +16,8 @@ PARTS
            
             <button class="noDrag" ng-click="up($index)"> <i class="fas fa-arrow-up"></i></button>
             <button class="noDrag" ng-click="down($index)"> <i class="fas fa-arrow-down"></i></button>
+            <button class="noDrag" ng-click="delete($index)"><i class="far fa-trash-alt"></i> </button>
+      
           </div>
             <div ng-switch="part.type">
               <div ng-switch-when="Tekst">

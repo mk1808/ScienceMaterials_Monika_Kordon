@@ -64,6 +64,12 @@ angular
                     scope.parts[id]  = scope.parts[id+1];
                     scope.parts[id+1]=prev;   }
                 }
+                $scope.delete=function(id){
+                    debugger;
+                    scope.parts.splice(id, 1);
+             
+                
+                }
                 //  debugger;
                 /*dragulaService.options($scope, 'bag-one', {
                     copy: true
@@ -153,7 +159,7 @@ angular
                             filesInPartsIndex++;
                             pictureOrderNo++;
                           
-                            newPart.fileOrderNo = pictureOrderNo;
+                            newPart.pictureOrderNo = pictureOrderNo;
                     
               
                         }
@@ -161,7 +167,14 @@ angular
                         newPart.orderNo = i;
                         body.push(newPart);
                         i++;
-                } articleRestService.saveArticleParts(body, scope.success, scope.error)
+                } 
+                if(!$scope.editing){
+                      articleRestService.saveArticleParts(body, scope.success, scope.error)
+                }
+                else{
+                    articleRestService.editArticleParts(scope.articleId, body, scope.success, scope.error)
+                }
+              
                 console.log(scope.parts)
             }
                 $scope.saveFilesError = function () {

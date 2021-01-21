@@ -104,6 +104,16 @@ angular
                 'Authorization': token }
             }).then(successCallback, errorCallback);
         }
+        this.editArticleParts = function (id, parts, successCallback, errorCallback) {
+            let token = localStorage.getItem("token");
+            $http({
+                method: 'PUT',
+                url: 'api/articles/parts/'+id,
+                data: parts,
+                headers: { 'Content-Type': 'application/json',
+                'Authorization': token  }
+            }).then(successCallback, errorCallback);
+        }
             
             
            this.deleteArticle = function (id, successCallback, errorCallback) {
