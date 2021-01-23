@@ -13,3 +13,5 @@ Aplikacja pozwala na dzielenie się materiałami naukowymi z innymi użytkownika
  - edycja dodanego artykułu
  - usunięcie artykułu
  - wysłanie wiadomości przez formularz kontaktowy.
+ 
+ Dodatkowo aplikacja posiada wersję mobilną, tzn. jest dostosowana do ekranów różnej wielkości. 
