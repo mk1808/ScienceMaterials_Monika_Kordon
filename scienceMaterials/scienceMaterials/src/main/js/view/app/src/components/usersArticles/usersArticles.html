@@ -1,0 +1,63 @@
+ARTICLES USERR
+<div class="addArticle userArticles">
+  <div class="content tableContent">
+    <div class="header">
+            <h1>Artykuły dodane przez Ciebie</h1>
+        </div>
+    <table class="table is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th><abbr title="number">Numer</abbr></th>
+          <th><abbr title="title">Tytuł</abbr></th>
+          <th><abbr title="category">Kategorie</abbr></th>
+          <th><abbr title="creationDate">Data utworzenia</th>
+          <th><abbr title="views">Liczba wyświetleń</abbr></th>
+          <th><abbr title="edit">Edytuj</abbr></th>
+          <th><abbr title="delete">Usuń</abbr></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="initialized && articles.length>0" ng-repeat="article in articles">
+          <th>{{$index+1}}</th>
+          <td>{{article.title}}</td>
+          <td>23</td>
+          <td>{{article.creationDate| date:'dd-MM-yyyy'}}</td>
+          <td>3</td>
+          <td  ng-click="edit(article.id)"><i class="fas fa-edit"></i></td>
+          <td  ng-click="remove(article.id, article.title)"><i class="far fa-trash-alt"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <div ng-if="articles.length<1"class="header marginTop">
+      <h3>Nie dodałeś jeszcze żadnych artykułów</h3>
+  </div>
+  <button class="button is-primary" ng-click="addArticle()">Dodaj nowy artykuł</button>
+  </div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Usuwanie artykułu</strong> 
+              <br>
+              <div>    Czy na pewno chcesz usunąć artykuł {{articleToRemoveTitle}}?
+              </div>
+            </p>
+          </div>
+          <div class="dialogButtons">
+            <button class="button is-info" ng-click="closeDialog()" id="next">Anuluj</button>
+            <button class="button is-danger " ng-click="confirmDelete()" id="closebtn">Usuń</button>
+         
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <button class="modal-close is-large" ng-click="closeDialog()" aria-label="close"></button>
+</div>

@@ -1,0 +1,20 @@
+<div class="addArticle register">
+    <div class="content formContent">
+        <div class="header">
+            <h1>Formularz kontaktowy</h1>
+        </div>
+        <input-directive display-name="Mail" control-name="contactForm.mail"></input-directive>
+        <input-directive display-name="Imię" control-name="contactForm.name"></input-directive>
+        
+        <textarea-directive display-name="Twoja wiadomość" control-name="contactForm.message">
+        </textarea-directive>
+        <div class="buttons">
+            <button class="button" ng-click="clear()">Wyczyść</button>
+            <div></div>
+            <button class="button is-primary" ng-click="submit()">Wyślij</button>
+        </div>
+        <div class="result" ng-if="sent===true">
+            <h2>Twoja wiadomość została wysłana</h2>
+        </div>
+    </div>
+</div>

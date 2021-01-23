@@ -1,0 +1,19 @@
+<div class="singleInput fileInput" id="fileInput">
+  <label class="label">{{displayName}}</label>
+  <div class="file has-name">
+    <label class="file-label">
+      <input class="file-input" type="file"  select-ng-files name="resume" onchange="angular.element(this).scope().selectFile(event)">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Wybierz plik
+        </span>
+      </span>
+      <span class="file-name">
+        {{filename}}
+      </span>
+    </label>
+  </div>
+</div>

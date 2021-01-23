@@ -26,8 +26,23 @@
   grid-template-columns: 33% 33% 33%; }
 
 .cardFromGrid .card {
-  margin-left: 20px;
-  margin-right: 20px; }
+  margin: 0px 20px 50px 20px; }
+  .cardFromGrid .card .card-content {
+    height: 250px; }
+    .cardFromGrid .card .card-content .content .summary {
+      min-height: 73px; }
+    .cardFromGrid .card .card-content .content time {
+      display: inline-flex; }
+      .cardFromGrid .card .card-content .content time div {
+        margin-left: 10px; }
+      .cardFromGrid .card .card-content .content time .icon {
+        font-size: 20px; }
+  .cardFromGrid .card .buttonContainer {
+    text-align: center; }
+    .cardFromGrid .card .buttonContainer button {
+      width: 200px;
+      margin-top: 10px;
+      margin-bottom: 10px; }
 
 .singleArticle .card .card-image img {
   height: 200px; }
@@ -48,7 +63,11 @@
   margin-top: 20px; }
 
 .singleArticle .card .card-content .categories {
+  margin-top: 20px;
   text-align: center; }
+  .singleArticle .card .card-content .categories .tag {
+    margin-left: 10px;
+    margin-right: 10px; }
 
 .singleArticle .card .card-content .media {
   text-align: end;
@@ -77,18 +96,22 @@
     font-weight: 600; }
     .singleArticle .card .articleContent .articlePicture img {
       margin-top: 20px;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 400px; }
   .singleArticle .card .articleContent .articleLink {
     min-height: 175px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
     text-align: center; }
     .singleArticle .card .articleContent .articleLink .border {
       border-left: 1px solid black;
       border-right: 1px solid black;
       border-bottom: 1px solid black;
-      height: 100px;
+      min-height: 100px;
       padding: 20px; }
       .singleArticle .card .articleContent .articleLink .border div {
         font-size: 26px;
@@ -101,10 +124,165 @@
       text-align: left; }
     .singleArticle .card .articleContent .articleLink .author {
       text-align: end; }
-  .singleArticle .card .articleContent .points ul {
-    list-style: inside;
-    margin-left: 32px;
-    margin-top: 20px;
-    margin-bottom: 25px; }
+  .singleArticle .card .articleContent .points {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+    .singleArticle .card .articleContent .points ul {
+      list-style: inside;
+      margin-left: 32px; }
   .singleArticle .card .articleContent .media .title {
     margin-bottom: 8px; }
+
+.pageContent {
+  padding-top: 50px;
+  background: white;
+  background: linear-gradient(36deg, white 72%, #00d1b2 100%); }
+
+.addArticle {
+  text-align: center; }
+  .addArticle .addArticleParts {
+    width: 1200px !important; }
+  .addArticle .formContent {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+    min-height: 1000px;
+    padding: 50px 200px;
+    background-color: white;
+    border-radius: 9px; }
+    .addArticle .formContent .singleInput {
+      width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px; }
+      .addArticle .formContent .singleInput label {
+        text-align: left; }
+      .addArticle .formContent .singleInput textarea {
+        width: auto; }
+      .addArticle .formContent .singleInput .file {
+        justify-content: center; }
+    .addArticle .formContent .areaInput {
+      width: auto !important; }
+    .addArticle .formContent .fileInput {
+      width: 400px; }
+    .addArticle .formContent input {
+      width: 320px; }
+    .addArticle .formContent select {
+      width: 320px; }
+  .addArticle .tableContent {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    min-height: 1000px;
+    padding: 50px 180px !important; }
+  .addArticle .addPartsContent {
+    padding: 50px 40px; }
+
+.searching .header {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 47px; }
+
+.register .header {
+  margin-bottom: 55px;
+  font-size: 25px; }
+
+.register .buttons {
+  display: grid;
+  grid-template-columns: 120px 85px 120px !important;
+  justify-content: space-evenly !important;
+  margin-top: 50px; }
+
+.register .result {
+  margin-top: 20px;
+  border: 1px dashed black;
+  padding: 10px;
+  border-radius: 30px; }
+  .register .result.searchResult {
+    margin-top: 60px;
+    border: 2px dashed black;
+    padding: 24px;
+    border-radius: 30px;
+    margin: 60px 300px;
+    font-size: 33px;
+    text-align: center; }
+
+.userArticles .header {
+  margin-bottom: 30px; }
+  .userArticles .header.marginTop {
+    margin-top: 30px; }
+
+.searchBar {
+  display: flex;
+  /* grid-template-columns: 30% 20% 20% 30%; */
+  grid-column-gap: 50px;
+  justify-content: center; }
+  .searchBar .button {
+    margin-top: 32px;
+    margin-bottom: 50px; }
+
+.creationPart {
+  display: grid;
+  grid-template-columns: 290px 752px;
+  grid-column-gap: 50px;
+  margin-bottom: 30px; }
+  .creationPart .source {
+    cursor: pointer; }
+    .creationPart .source .item {
+      padding: 20px;
+      margin: 5px;
+      border: 1px solid black;
+      border-radius: 47px; }
+  .creationPart .bag-one {
+    cursor: pointer; }
+  .creationPart .bag-two {
+    cursor: pointer; }
+  .creationPart .sandbox {
+    cursor: pointer;
+    border: 2px dashed #7b7979;
+    min-height: 1200px;
+    padding: 20px; }
+    .creationPart .sandbox .item {
+      padding: 20px;
+      margin: 5px;
+      border: 1px solid black;
+      border-radius: 47px;
+      background: white;
+      background: linear-gradient(0deg, white calc(100% - 72px), #22c1c3 100%); }
+      .creationPart .sandbox .item .name {
+        margin-bottom: 20px; }
+        .creationPart .sandbox .item .name span {
+          font-size: 23px;
+          letter-spacing: 2px;
+          margin-right: 10px; }
+    .creationPart .sandbox p {
+      font-size: 28px;
+      color: #aaaaaa; }
+
+.modal-content .dialogButtons {
+  display: flex;
+  justify-content: space-between; }
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80); }
+
+.gu-hide {
+  display: none !important; }
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important; }
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20); }

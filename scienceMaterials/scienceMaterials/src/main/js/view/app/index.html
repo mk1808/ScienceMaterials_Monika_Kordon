@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="materialsApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="materialsApp" class="no-js">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,15 +17,17 @@
   <!-- 
       <link rel="stylesheet" href="app.css">
   -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link rel="icon" type="image/png" ng-href="/favicon.png"/>
-  <link rel="icon" type="image/png" ng-href="https://example.com/favicon.png"/>
+  <!--<link rel="icon" type="image/png" ng-href="/favicon.png" />
+  <link rel="icon" type="image/png" ng-href="https://example.com/favicon.png" />-->
 </head>
+
 <body>
- <!-- <ul class="menu">
+  <!-- <ul class="menu">
     <li><a href="#!/view1">view1</a></li>
     <li><a href="#!/view2">view2</a></li>
     <div class="buttons">
@@ -41,29 +46,73 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  
-<header-directive></header-directive>
-  <div class = "mainPagePart" ng-view></div>
-<footer-directive></footer-directive>
-<!--  <div>AngularJS seed app: av<span app-version></span></div>
+
+  <header-directive></header-directive>
+  <div class="pageContent">
+     <div class="mainPagePart" ng-view></div>
+  </div>
+ 
+  <footer-directive></footer-directive>
+  <!--  <div>AngularJS seed app: av<span app-version></span></div>
 -->
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+
+
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-<script src="src/layout/footerDirective.js"></script>
-<script src="src/layout/headerDirective.js"></script>
-<script src="src/components/common/card/cardDirective.js"></script>
+  <script src="lib/bundle.js"></script>
+  <!--<script src="app.js"></script>-->
+  <script src="src/layout/footerDirective.js"></script>
+  <script src="src/layout/headerDirective.js"></script>
+
+
+  <script src="src/components/common/card/cardDirective.js"></script>
+  <script src="src/components/common/file/fileDirective.js"></script>
+  <script src="src/components/common/articleHeader/articleHeaderDirective.js"></script>
+  <script src="src/components/common/link/linkDirective.js"></script>
+  <script src="src/components/common/picture/pictureDirective.js"></script>
+  <script src="src/components/common/point/pointDirective.js"></script>
+  <script src="src/components/common/simpleText/simpleTextDirective.js"></script>
+  <script src="src/components/common/title/titleDirective.js"></script>
+
+
   <script src="src/components/main/mainPageDirective.js"></script>
   <script src="src/components/singleArticle/singleArticleDirective.js"></script>
+  <script src = "src/components/addArticle/addArticleDirective.js"></script>
+  <script src = "src/components/addArticle/addArticleParts/addArticlePartsDirective.js"></script>
+  <script src="src/components/usersArticles/usersArticlesDirective.js"></script>
+  <script src = "src/components/auth/register/register-directive.js"></script>
+  <script src = "src/components/auth/login/login-directive.js"></script>
+  <script src="src/components/searchArticles/searchArticlesDirective.js"></script>
+  <script src="src/components/contact/contactDirective.js"></script>
   
+
+  <script src="src/components/common/basicFormElements/fileForm/fileFormDirective.js"></script>
+  <script src="src/components/common/basicFormElements/input/inputDirective.js"></script>
+  <script src="src/components/common/basicFormElements/textarea/textareaDirective.js"></script>
+  <script src="src/components/common/basicFormElements/selectOption/selectOptionDirective.js"></script>
+
+  <script src="src/components/common/form/articleHeaderFormField/articleHeaderFormFieldDirective.js"></script>
+  <script src="src/components/common/form/fileFormField/fileFormFieldDirective.js"></script>
+  <script src="src/components/common/form/linkFormField/linkFormFieldDirective.js"></script> 
+  <script src="src/components/common/form/pictureFormField/pictureFormFieldDirective.js"></script> 
+  <script src="src/components/common/form/pointFormField/pointFormFieldDirective.js"></script>
+  <script src="src/components/common/form/simpleTextFormField/simpleTextFormFieldDirective.js"></script>
+
+  <script src="src/services/ArticleRestService.js"></script>
+  <script src="src/services/UserRestService.js"></script>
+  <script src="src/services/DataShareService.js"></script>
+  <script src="src/services/MessageRestService.js"></script>
+
+
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="core/version/version.js"></script>
   <script src="core/version/version-directive.js"></script>
   <script src="core/version/interpolate-filter.js"></script>
 </body>
+
 </html>

@@ -35,8 +35,34 @@
 }
 
 .cardFromGrid .card {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0px 20px 50px 20px;
+
+    .card-content {
+        height: 250px;
+        .content{
+            .summary{
+                
+    min-height: 73px;
+
+            }
+            time{
+                display:inline-flex;
+                div{
+                    margin-left: 10px;
+                }
+               .icon{font-size: 20px;
+            }
+            }
+        }
+    }
+    .buttonContainer{
+        text-align: center;
+        button{
+            width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+        }
+    }
 }
 
 .singleArticle .card {
@@ -45,6 +71,7 @@
     }
 
     .card-content {
+
         h1 {
             text-align: center;
             font-size: 81px;
@@ -63,7 +90,13 @@
         }
 
         .categories {
+            margin-top: 20px;
             text-align: center;
+
+            .tag {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
         }
 
         .media {
@@ -102,6 +135,8 @@
             img {
                 margin-top: 20px;
                 margin-bottom: 10px;
+                width: 100%;
+                max-width: 400px;
             }
         }
 
@@ -110,13 +145,15 @@
             width: 500px;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 25px;
+            margin-bottom: 25px;
             text-align: center;
 
             .border {
                 border-left: 1px solid black;
                 border-right: 1px solid black;
                 border-bottom: 1px solid black;
-                height: 100px;
+                min-height: 100px;
                 padding: 20px;
 
                 div {
@@ -139,11 +176,13 @@
         }
 
         .points {
+            margin-top: 5px;
+            margin-bottom: 5px;
+
             ul {
                 list-style: inside;
                 margin-left: 32px;
-                margin-top: 20px;
-                margin-bottom:25px;
+
             }
         }
 
@@ -154,4 +193,239 @@
         }
 
     }
+}
+.pageContent{
+    padding-top:50px;
+    background: rgb(255,255,255);
+background: linear-gradient(36deg, rgba(255,255,255,1) 72%, rgba(0,209,178,1) 100%);
+}
+.addArticle {
+    text-align: center;
+   
+.addArticleParts{
+    width: 1200px!important;
+}
+    .formContent {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid black;
+        min-height: 1000px;
+        padding: 50px 200px;
+        background-color: white;
+    border-radius: 9px;
+
+        .singleInput {
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+
+            & label {
+                text-align: left;
+            }
+
+            textarea {
+                width: auto;
+            }
+
+            .file {
+                justify-content: center;
+            }
+        }
+
+        .areaInput {
+            width: auto !important;
+        }
+
+        .fileInput {
+            width: 400px;
+        }
+
+        input {
+
+            width: 320px;
+        }
+
+        select {
+            width: 320px;
+        }
+
+
+    }
+
+    .tableContent {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        min-height: 1000px;
+        padding: 50px 180px !important;
+    }
+
+    .addPartsContent {
+        padding: 50px 40px;
+    }
+
+
+}
+
+.searching{
+    .header {
+        text-align: center;
+        margin-bottom: 60px;
+    font-size: 47px;
+    }
+}
+ 
+.register {
+    .header {
+        margin-bottom: 55px;
+    font-size: 25px;
+
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: 120px 85px 120px !important;
+        justify-content: space-evenly !important;
+        margin-top:50px;
+    }
+
+    .result {
+        margin-top: 20px;
+
+        border: 1px dashed black;
+        padding: 10px;
+        border-radius: 30px;
+
+        &.searchResult{
+            margin-top: 60px;
+            border: 2px dashed black;
+            padding: 24px;
+            border-radius: 30px;
+            margin: 60px 300px;
+            font-size: 33px;
+            text-align: center;
+        }
+    }
+
+}
+
+.userArticles {
+    .header {
+        margin-bottom: 30px;
+
+        &.marginTop {
+            margin-top: 30px;
+        }
+    }
+}
+
+
+.searchBar {
+    display: flex;
+    /* grid-template-columns: 30% 20% 20% 30%; */
+    grid-column-gap: 50px;
+    justify-content: center;
+
+    .button {
+        margin-top: 32px;
+        margin-bottom: 50px;
+    }
+}
+
+.creationPart {
+    display: grid;
+    grid-template-columns: 290px 752px;
+    grid-column-gap: 50px;
+    margin-bottom:30px;
+
+    .source {
+        cursor: pointer;
+
+        .item {
+            padding: 20px;
+            margin: 5px;
+            border: 1px solid black;
+            border-radius: 47px;
+        }
+    }
+
+    .bag-one {
+        cursor: pointer;
+    }
+
+    .bag-two {
+        cursor: pointer;
+
+    }
+
+    .sandbox {
+     cursor: pointer;
+
+    border: 2px dashed #7b7979;
+    min-height: 1200px;
+    padding: 20px;
+
+     .item {
+         padding: 20px;
+         margin: 5px;
+         border: 1px solid black;
+         border-radius: 47px;
+         background: rgb(255, 255, 255);
+         background: linear-gradient(0deg, rgba(255, 255, 255, 1) calc(100% - 72px), rgba(34, 193, 195, 1) 100%);
+
+         .name {
+             margin-bottom: 20px;
+
+             span {
+                 font-size: 23px;
+                 letter-spacing: 2px;
+                 margin-right: 10px;
+
+             }
+         }
+     }
+
+    
+
+     p {
+         font-size: 28px;
+         color: #aaaaaa;
+     }
+ }
+ }
+.modal-content{
+    .dialogButtons{
+         display: flex; 
+    justify-content: space-between;
+    }
+}
+
+
+.gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+}
+
+.gu-hide {
+    display: none !important;
+}
+
+.gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+.gu-transit {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
 }

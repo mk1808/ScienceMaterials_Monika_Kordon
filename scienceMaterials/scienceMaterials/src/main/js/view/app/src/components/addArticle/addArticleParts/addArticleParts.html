@@ -1,0 +1,59 @@
+PARTS
+<div class="addArticle" ng-controller="addArticlePartsCtrl">
+  <div class="content formContent register addPartsContent addArticleParts">
+    <div class="header">
+      <h1>Tworzenie nowego artykułu</h1>
+    </div>
+    <div>
+      <div class="creationPart">
+        <div dragula='"bag-one"' class="source" dragula-model='elements'>
+          <div class="item" ng-repeat='text in elements'>{{text.type}}</div>
+        </div>
+        <div dragula='"bag-one"' class="sandbox" dragula-model='parts'>
+          <div class="noDrag item" ng-repeat='part in parts'>
+            <div class="name">
+         <span >   {{part.type}}</span>
+           
+            <button class="noDrag" ng-click="up($index)"> <i class="fas fa-arrow-up"></i></button>
+            <button class="noDrag" ng-click="down($index)"> <i class="fas fa-arrow-down"></i></button>
+            <button class="noDrag" ng-click="delete($index)"><i class="far fa-trash-alt"></i> </button>
+      
+          </div>
+            <div ng-switch="part.type">
+              <div ng-switch-when="Tekst">
+                <simple-text-form-field-directive form-data="part.data"></simple-text-form-field-directive>
+              </div>
+              <div ng-switch-when="Punktor"> 
+              <point-form-field-directive form-data="part.data"></point-form-field-directive>
+              </div>
+              <div ng-switch-when="Nagłówek">
+                <article-header-form-field-directive form-data="part.data"></article-header-form-field-directive>
+              </div>
+              <div ng-switch-when="Obraz">
+                <picture-form-field-directive form-data="part.data"></picture-form-field-directive>
+              </div>
+              <div ng-switch-when="Link">
+                <link-form-field-directive form-data="part.data"></link-form-field-directive>
+              </div>
+              <div ng-switch-when="Plik">
+                <file-form-field-directive form-data="part.data"></file-form-field-directive>
+              </div>
+            </div>
+          </div>
+          <p ng-if="parts.length<1">Tutaj przeciągnij wybrane elementy artykułu</p>
+        </div>
+      </div>
+      
+    <div class="buttons">
+      <button class="button" ng-click="clear()">Wyczyść</button>
+      <div></div>
+      <button class="button is-primary" ng-click="submit()">Zapisz</button>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
